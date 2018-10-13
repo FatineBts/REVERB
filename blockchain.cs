@@ -17,7 +17,7 @@ namespace class_blockchain
 
 			public Block CreateGenesisBlock() //is going to create the first block
 			{
-				return(new Block("Alexia doit 30 euros à Fatine",0,"000000000",DateTime.Now)); 
+				return(new Block("Alexia doit 30 euros à Fatine","000000000",DateTime.Now)); 
 			}
 
 			public Block GetLatestBlock()
@@ -27,13 +27,13 @@ namespace class_blockchain
 
 			public void AddBlock(Block NewBlock)
 	    	{
-	        	NewBlock.PreviousHash = GetLatestBlock().Hash; 
+	        	// NewBlock.PreviousHash = GetLatestBlock().Hash; 
 	        	_chain.Add(NewBlock);
 	    	}
 
 	   		public void DisplayBlockchain(int i)
 	    	{
-				string data = String.Format("Data: {0}, Nonce : {1}, PreviousHash : {2}, Hash : {3}, TimeStamp : {4}", _chain[i].Data,_chain[i].Nonce,_chain[i].PreviousHash,_chain[i].Hash, _chain[i].TimeStamp);
+				string data = String.Format("Data: {0}, Nonce : {1}, PreviousHash : {2}, Hash : {3}", _chain[i]._Data,_chain[i]._Nonce,_chain[i]._PreviousHash,_chain[i]._Hash);
 	    		Console.WriteLine(data);
 	    	} 
 		}

@@ -8,9 +8,11 @@ Participants : Yassin ABAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - A
 
 */
 
-using System; 
+using System;
+using System.Text;
 using System.Security.Cryptography;  
 
+using data_class;
 namespace class_block
 {
 	class Block 
@@ -18,38 +20,52 @@ namespace class_block
 	
 	/* Components of a block */
 
-		public string Data { get; set; }//data entered in the block
+		public string _Data { get; private set; }//data entered in the block
 
-		public int Nonce { get; set; }
+		public int _Nonce { get; private set; }
 
-		public string PreviousHash { get; set; }
+		public string _PreviousHash { get; private set; }
 
-		public string Hash { get; set; }
+		public string _Hash { get; private set; }
 
-		public DateTime TimeStamp { get; set; }
+		public DateTime _TimeStamp { get; private set; }
 
 		public Block(){} //default constructor
 
-		public Block(string data, int nonce, string previousHash, DateTime timeStamp)
-		{		
-			this.Data=data; //we fill the function created previously with the entrees
-			this.Nonce=nonce; 
-			this.PreviousHash=previousHash; 
-			this.Hash=CalculateHash();
-			this.TimeStamp=timeStamp;   
+		public Block(string data, string previousHash, DateTime timestamp)
+		{
+			_Data= data; //we fill the function created previously with the entrees
+			_PreviousHash=previousHash;
+			_TimeStamp = timestamp;
+
+			mineBlock();
 		}
 
     	public string CalculateHash()  
     	{  
     		SHA256 sha256 = SHA256.Create();
-    		byte[] inputBytes = Encoding.ASCII.GetBytes($"{TimeStamp}-{PreviousHash ?? ""}-{Data}");  
+    		byte[] inputBytes = Encoding.ASCII.GetBytes($"{_PreviousHash}-{_Data}-{_Nonce}");  
         	byte[] outputBytes = sha256.ComputeHash(inputBytes);  
         	return Convert.ToBase64String(outputBytes); 
     	}
 
+    	public void mineBlock()
+    	{
+    		_Nonce = 0;
+
+    		int difficulty = 3; // Number of symbol that we want
+    		string proof = new String('g',difficulty);
+    		do
+    		{
+    			_Hash = CalculateHash();
+    			_Nonce++;
+    			Console.WriteLine(_Nonce);
+
+    		} while(_Hash.Substring(0,difficulty) != proof);
+    	}
     	public void DisplayBlock()
     	{
-    		string data = String.Format("Data: {0}, Nonce : {1}, PreviousHash : {2}, Hash : {3}, TimeStamp : {4}", this.Data,this.Nonce,this.PreviousHash,this.Hash, this.TimeStamp);
+    		string data = String.Format("Data: {0}, _Nonce : {1}, PreviousHash : {2}, _Hash : {3}", _Data,_Nonce,_PreviousHash,_Hash);
     		Console.WriteLine(data);
 
     	} 
