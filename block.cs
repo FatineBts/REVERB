@@ -8,16 +8,11 @@ Participants : Yassin ABAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - A
 
 */
 
-using System;
-using System.Text;  
-using System.Security.Cryptography; 
-using System.Collections.Generic; // to use list  
-using System.Linq; // to use Last
+using System; 
+using System.Security.Cryptography;  
 
-
-namespace blockchain
+namespace class_block
 {
-
 	class Block 
 	{ //will herite from all the public or protected methods
 	
@@ -62,54 +57,6 @@ namespace blockchain
 
 	} // end of the class 
 
-
-	class Blockchain : Block 
-	{
-
-		List<Block> _chain; 
-
-		Blockchain()
-		{
-			this._chain = new List<Block>(); //create a list of Blocks
-			this._chain.Add(CreateGenesisBlock()); //to add a first Block (genesis)
-		}
-
-		Block CreateGenesisBlock() //is going to create the first block
-		{
-			return(new Block("Alexia doit 30 euros à Fatine",0,"000000000",DateTime.Now)); 
-		}
-
-		Block GetLatestBlock()
-    	{
-        	return this._chain.Last(); //to get the last Block
-    	}
-
-		void AddBlock(Block NewBlock)
-    	{
-        	NewBlock.PreviousHash = this.GetLatestBlock().Hash; 
-        	this._chain.Add(NewBlock);
-    	}
-
-   		void DisplayBlockchain(int i)
-    	{
-			string data = String.Format("Data: {0}, Nonce : {1}, PreviousHash : {2}, Hash : {3}, TimeStamp : {4}", this._chain[i].Data,this._chain[i].Nonce,this._chain[i].PreviousHash,this._chain[i].Hash, this._chain[i].TimeStamp);
-    		Console.WriteLine(data);
-    	} 
-
-		static void Main()
-		{
-			
-			// Test Block 
-			Block block = new Block("Geng doit 20 euros à Fatine",0,"000000000",DateTime.Now);
-			block.DisplayBlock(); 
-			// Test Blockchain
-			Blockchain blockchain = new Blockchain(); 
-			blockchain.DisplayBlockchain(0); 
-			blockchain.AddBlock(new Block("Aurélien doit 40 euros à Fatine",blockchain._chain[0].Nonce+1,blockchain._chain[0].Hash,DateTime.Now)); 
-			blockchain.DisplayBlockchain(1);
-		}
-
-	}
 
 } //end of the namespace
 
