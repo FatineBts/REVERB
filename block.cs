@@ -12,31 +12,31 @@ using System;
 using System.Text;
 using System.Security.Cryptography;  
 
-using data_class;
+using inter_block;
 namespace class_block
 {
-	class Block 
+	class Block : IBlock
 	{ //will herite from all the public or protected methods
 	
 	/* Components of a block */
 
-		public string _Data { get; private set; }//data entered in the block
+		public string Data { get; set; }//data entered in the block
 
-		public int _Nonce { get; private set; }
+		public int Nonce { get; set; }
 
-		public string _PreviousHash { get; private set; }
+		public string PreviousHash { get; set; }
 
-		public string _Hash { get; private set; }
+		public string Hash { get; set; }
 
-		public DateTime _TimeStamp { get; private set; }
+		public DateTime TimeStamp { get; set; }
 
 		public Block(){} //default constructor
 
 		public Block(string data, string previousHash, DateTime timestamp)
 		{
-			_Data= data; //we fill the function created previously with the entrees
-			_PreviousHash=previousHash;
-			_TimeStamp = timestamp;
+			Data= data; //we fill the function created previously with the entrees
+			PreviousHash=previousHash;
+			TimeStamp = timestamp;
 
 			mineBlock();
 		}
@@ -44,28 +44,28 @@ namespace class_block
     	public string CalculateHash()  
     	{  
     		SHA256 sha256 = SHA256.Create();
-    		byte[] inputBytes = Encoding.ASCII.GetBytes($"{_PreviousHash}-{_Data}-{_Nonce}");  
+    		byte[] inputBytes = Encoding.ASCII.GetBytes($"{PreviousHash}-{Data}-{Nonce}");  
         	byte[] outputBytes = sha256.ComputeHash(inputBytes);  
         	return Convert.ToBase64String(outputBytes); 
     	}
 
     	public void mineBlock()
     	{
-    		_Nonce = 0;
+    		Nonce = 0;
 
     		int difficulty = 3; // Number of symbol that we want
-    		string proof = new String('g',difficulty);
+    		string proof = new String('g',difficulty); //to have 3 times g at the beginning 
     		do
     		{
-    			_Hash = CalculateHash();
-    			_Nonce++;
-    			Console.WriteLine(_Nonce);
+    			Hash = CalculateHash();
+    			Nonce++;
+    			//Console.WriteLine(_Nonce);
 
-    		} while(_Hash.Substring(0,difficulty) != proof);
+    		} while(Hash.Substring(0,difficulty) != proof); //while the condition below is not achieved
     	}
     	public void DisplayBlock()
     	{
-    		string data = String.Format("Data: {0}, _Nonce : {1}, PreviousHash : {2}, _Hash : {3}", _Data,_Nonce,_PreviousHash,_Hash);
+    		string data = String.Format("Data: {0}, _Nonce : {1}, PreviousHash : {2}, _Hash : {3}", Data,Nonce,PreviousHash,Hash);
     		Console.WriteLine(data);
 
     	} 
