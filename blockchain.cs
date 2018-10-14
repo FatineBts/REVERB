@@ -9,6 +9,7 @@ Participants : Yassin ABAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - A
 */
 
 using System;
+using System.Text;
 using System.Collections.Generic; // to use list 
 using System.Collections;
 using System.Linq; // to use Last
@@ -17,30 +18,25 @@ using class_block;
 
 namespace class_blockchain
 {
-	class Blockchain : IEnumerable<IBlock>
+	class Blockchain
 		{
 
-			List<IBlock> _chain; 
+			public List<Block> _chain { get; private set;}
+			public string _lastBlockHash {get; private set;}
 
 			public Blockchain()
 			{
-				_chain = new List<IBlock>(); //create a list of Blocks
-					_chain.Add(CreateGenesisBlock()); //to add a first Block (genesis)
+				_chain = new List<Block>(); //create a list of Blocks
+				_lastBlockHash = new String("00000000000");
 			}
 
-			public void AddBlock(IBlock NewBlock)
+			public void AddBlock(Block NewBlock)
 	    	{
-				NewBlock.PreviousHash = GetLatestBlock().Hash; 
 	        	_chain.Add(NewBlock);
-	        	//NewBlock.Hash = NewBlock.mineblock(); 
+	        	_lastBlockHash = NewBlock.Hash;
 	    	}
 
-			public IBlock CreateGenesisBlock() //is going to create the first block
-			{
-				return(new Block("Comment ca va ?","000000000",DateTime.Now)); 
-			}
-
-			public IBlock GetLatestBlock()
+			public Block GetLatestBlock()
 	    	{
 	        	return _chain.Last(); //to get the last Block
 	    	}
@@ -50,18 +46,19 @@ namespace class_blockchain
 	    	{
 				string data = String.Format("Data: {0}, Nonce : {1}, PreviousHash : {2}, Hash : {3}", _chain[i].Data,_chain[i].Nonce,_chain[i].PreviousHash,_chain[i].Hash);
 	    		Console.WriteLine(data);
-	    	} 
+	    	}
 
-        	public IEnumerator<IBlock> GetEnumerator()
-        	{
-            	return _chain.GetEnumerator();
-        	}
+	    	public override string ToString()
+	    	{
+	    		StringBuilder res = new StringBuilder();
+	    		for(int i = 0; i < _chain.Count; i++)
+	    		{
+	    			res.Append("\n--- Block " + i + " ---\n");
+	    			res.Append(_chain[i].ToString());
+	    		}
 
-        	IEnumerator IEnumerable.GetEnumerator()
-        	{
-            	return _chain.GetEnumerator();
-       	 	}
-
+	    		return res.ToString();
+	    	}
 		}
 
 }

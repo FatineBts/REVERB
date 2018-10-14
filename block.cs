@@ -15,20 +15,17 @@ using System.Security.Cryptography;
 using inter_block;
 namespace class_block
 {
-	class Block : IBlock
+	class Block
 	{ //will herite from all the public or protected methods
-	
-	/* Components of a block */
+		public string Data { get; private set;}//data entered in the block
 
-		public string Data { get; set; }//data entered in the block
+		public int Nonce { get; private set;}
 
-		public int Nonce { get; set; }
+		public string PreviousHash { get; private set;}
 
-		public string PreviousHash { get; set; }
+		public string Hash { get; private set;}
 
-		public string Hash { get; set; }
-
-		public DateTime TimeStamp { get; set; }
+		public DateTime TimeStamp { get; private set;}
 
 		public Block(){} //default constructor
 
@@ -63,6 +60,7 @@ namespace class_block
 
     		} while(Hash.Substring(0,difficulty) != proof); //while the condition below is not achieved
     	}
+
     	public void DisplayBlock()
     	{
     		string data = String.Format("Data: {0}, _Nonce : {1}, PreviousHash : {2}, _Hash : {3}", Data,Nonce,PreviousHash,Hash);
@@ -70,7 +68,10 @@ namespace class_block
 
     	} 
 
-
+    	public override string ToString()
+    	{
+    		return ("Data: "+Data+"\nPreviousHash: "+PreviousHash+"\nHash: "+ Hash+"\nTime: "+ TimeStamp.ToString("G"));
+    	}
 	} // end of the class 
 
 

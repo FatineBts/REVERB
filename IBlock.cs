@@ -15,14 +15,16 @@ namespace inter_block
 	public interface IBlock
 	{
 
-		string Data { get; set;}
+		/* Components of a block */
 
-		int Nonce { get; set; }
+		string Data { get;}//data entered in the block
 
-		string PreviousHash { get; set; }
+		int Nonce { get;}
 
-		string Hash { get; set; }
+		string PreviousHash { get;}
 
-		DateTime TimeStamp { get; set;}
+		string Hash { get;}
+
+		DateTime TimeStamp { get;}
 	}
 }
