@@ -12,7 +12,6 @@ using System;
 using System.Text;
 using System.Security.Cryptography;  
 
-using inter_block;
 namespace class_block
 {
 	class Block
@@ -60,13 +59,6 @@ namespace class_block
 
     		} while(Hash.Substring(0,difficulty) != proof); //while the condition below is not achieved
     	}
-
-    	public void DisplayBlock()
-    	{
-    		string data = String.Format("Data: {0}, _Nonce : {1}, PreviousHash : {2}, _Hash : {3}", Data,Nonce,PreviousHash,Hash);
-    		Console.WriteLine(data);
-
-    	} 
 
     	public override string ToString()
     	{

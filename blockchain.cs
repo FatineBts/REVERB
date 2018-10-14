@@ -13,7 +13,6 @@ using System.Text;
 using System.Collections.Generic; // to use list 
 using System.Collections;
 using System.Linq; // to use Last
-using inter_block;
 using class_block;
 
 namespace class_blockchain
@@ -39,13 +38,6 @@ namespace class_blockchain
 			public Block GetLatestBlock()
 	    	{
 	        	return _chain.Last(); //to get the last Block
-	    	}
-
-
-	   		public void DisplayBlockchain(int i)
-	    	{
-				string data = String.Format("Data: {0}, Nonce : {1}, PreviousHash : {2}, Hash : {3}", _chain[i].Data,_chain[i].Nonce,_chain[i].PreviousHash,_chain[i].Hash);
-	    		Console.WriteLine(data);
 	    	}
 
 	    	public override string ToString()
