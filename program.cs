@@ -1,3 +1,13 @@
+/*
+
+##### REVERB Project ######## Polytech Sorbonne - 2018/2019 #########
+
+Encadrant : François PÊCHEUX 
+
+Participants : Yassin ABAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - Alexia ZOUNIAS-SIRABELLA
+
+*/
+
 using System;
 using class_blockchain;
 using class_block;
