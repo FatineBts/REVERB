@@ -24,24 +24,111 @@ namespace class_blockchain
 
 			public List<Block> _chain { get; private set;}
 			public string _lastBlockHash {get; private set;}
+			IList<Transaction> PendingTransactions = new List<Transaction>(); // a list of pending transactions 
+			public int Difficulty { set; get; } = 2;
+        	public int Reward = 1; //1 cryptoreward
 
 			public Blockchain()
-			{
-				_chain = new List<Block>(); //create a list of Blocks
-				_lastBlockHash = new String("00000000000");
-			}
+        	{
+            	InitializeChain();
+            	AddFirstBlock();
+        	}
 
-			public void AddBlock(Block NewBlock)
-	    	{
-	        	_chain.Add(NewBlock);
-	        	_lastBlockHash = NewBlock.Hash;
-	    	}
+        	 public void InitializeChain()
+        	{
+            	_chain = new List<Block>();
+        	}
 
-			public Block GetLatestBlock()
+        	public Block CreateFirstBlock()
+   	    	{
+        		Block block = new Block(DateTime.Now, null, PendingTransactions);
+            	block.mineBlock(Difficulty);
+            	PendingTransactions = new List<Transaction>();
+            	return block;
+        	}
+
+        	public void AddFirstBlock()
+        	{
+            	_chain.Add(CreateFirstBlock());
+        	}
+
+        	public Block GetLatestBlock()
 	    	{
 	        	return _chain.Last(); //to get the last Block
 	    	}
 
+			public void AddBlock(Block NewBlock)
+
+	    	{
+	    		Block latestBlock = GetLatestBlock();  
+        		NewBlock.Index = latestBlock.Index + 1;  
+        		NewBlock.PreviousHash = latestBlock.Hash;  
+        		NewBlock.Hash = NewBlock.CalculateHash();
+        		NewBlock.mineBlock(Difficulty);
+	        	_chain.Add(NewBlock);
+	     
+	    	}
+
+	    	public void CreateTransaction(Transaction transaction)  
+			{  
+    			PendingTransactions.Add(transaction);  
+			}
+
+			public void ProcessPendingTransactions(string minerAddress)  
+			{  
+    			Block block = new Block(DateTime.Now, GetLatestBlock().Hash, PendingTransactions);  
+    			AddBlock(block);  
+  
+    			PendingTransactions = new List<Transaction>();  
+    			CreateTransaction(new Transaction(null, minerAddress, Reward));  
+			}
+
+			public bool IsValid()
+        	{
+            	for (int i = 1; i < _chain.Count; i++)
+            	{
+                	Block currentBlock = _chain[i];
+                	Block previousBlock = _chain[i - 1];
+
+            		if (currentBlock.Hash != currentBlock.CalculateHash()) // when we update transaction data 
+                	{
+                    	return false;
+                	}
+
+                	if (currentBlock.PreviousHash != previousBlock.Hash) //  link between blocks is invalid 
+                	{
+                    	return false;
+                	}
+            	}
+            return true;
+        	}
+
+        	public int GetBalance(string address) // get balance for one address 
+        	{
+            	int balance = 0;
+
+            	for (int i = 0; i < _chain.Count; i++)
+            	{
+                	for (int j = 0; j < _chain[i].Transactions.Count; j++)
+                	{
+                    	var transaction = _chain[i].Transactions[j];
+
+                    	if (transaction.FromAddress == address)
+                    	{
+                        	balance -= transaction.Amount;
+                    	}
+
+                    	if (transaction.ToAddress == address)
+                    	{
+                        	balance += transaction.Amount;
+                    	}
+                	}
+            	}
+
+            return balance;
+        	}  
+
+	
 	    	public override string ToString()
 	    	{
 	    		StringBuilder res = new StringBuilder();
