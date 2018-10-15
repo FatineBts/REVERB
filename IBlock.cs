@@ -4,11 +4,15 @@
 
 Encadrant : François PÊCHEUX 
 
-Participants : Yassin ABAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - Alexia ZOUNIAS-SIRABELLA
+Participants : Yassine ABBAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - Alexia ZOUNIAS-SIRABELLA
 
 */
 
 using System;
+using System.Text;
+using System.Collections.Generic; // to use list 
+using System.Collections;
+using class_transaction;
 
 namespace inter_block
 {
