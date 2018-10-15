@@ -1,0 +1,4 @@
+/home/abbar/Bureau/MAIN5/REVERB/REVERB/obj/Debug/netcoreapp2.1/REVERB.csprojAssemblyReference.cache
+/home/abbar/Bureau/MAIN5/REVERB/REVERB/obj/Debug/netcoreapp2.1/REVERB.csproj.CoreCompileInputs.cache
+/home/abbar/Bureau/MAIN5/REVERB/REVERB/obj/Debug/netcoreapp2.1/REVERB.AssemblyInfoInputs.cache
+/home/abbar/Bureau/MAIN5/REVERB/REVERB/obj/Debug/netcoreapp2.1/REVERB.AssemblyInfo.cs
