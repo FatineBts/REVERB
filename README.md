@@ -14,6 +14,7 @@ Files:
 - transactions.cs: modelize transferts between different users. 
 - REVERB.csproj, bin folder and obj folder: to use dotnet. 
 
+
 FR : 
 Il s'agit d'un projet réalisé de la cadre de la 5 ème de Mathématiques Appliquées et Informatique à Polytech Sorbonne. 
 Le but de ce projet est de modéliser un complexe de logements autosuffisants en énergie et d'utiliser le concept de blockchain pour assurer les transactions énergétiques au sein du système. 
