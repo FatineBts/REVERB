@@ -29,4 +29,4 @@ Fichiers :
 - IBlocks.cs : correspond à l'interface de la classe Block. 
 - blockchain.cs : crée un ensemble de blocks et met à jour les informations (précédents Hash,transactions...)
 - transactions.cs : modélise les transferts entre plusieurs personnes. 
-- REVERB.csproj, bin folder and obj folder: pour utiliser dotnet.  
+- REVERB.csproj, bin folder and obj folder : pour utiliser dotnet.  
