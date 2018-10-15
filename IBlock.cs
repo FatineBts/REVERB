@@ -21,7 +21,9 @@ namespace inter_block
 
 		/* Components of a block */
 
-		string Data { get;}//data entered in the block
+		int Index { get; set; }
+
+		IList<Transaction> Transactions { get; set; } // a list of transaction
 
 		int Nonce { get;}
 

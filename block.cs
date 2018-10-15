@@ -4,52 +4,58 @@
 
 Encadrant : François PÊCHEUX 
 
-Participants : Yassin ABAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - Alexia ZOUNIAS-SIRABELLA
+Participants : Yassine ABBAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - Alexia ZOUNIAS-SIRABELLA
 
 */
 
 using System;
 using System.Text;
-using System.Security.Cryptography;  
+using System.Security.Cryptography;
+using System.Collections.Generic; // to use list 
+using System.Collections;
+using System.Linq; 
+using class_transaction;
+using Newtonsoft.Json;
+
 
 namespace class_block
 {
 	class Block
 	{ //will herite from all the public or protected methods
-		public string Data { get; private set;}//data entered in the block
+        public int Index { get; set; }
 
-		public int Nonce { get; private set;}
+		public IList<Transaction> Transactions { get; set; } // a list of transactions
 
-		public string PreviousHash { get; private set;}
+		public int Nonce { get; private set;} = 0;
 
-		public string Hash { get; private set;}
+		public string PreviousHash { get; set;}
+
+		public string Hash { get; set;}
 
 		public DateTime TimeStamp { get; private set;}
 
 		public Block(){} //default constructor
 
-		public Block(string data, string previousHash, DateTime timestamp)
+		public Block(DateTime timeStamp, string previousHash, IList<Transaction> transactions)
 		{
-			Data= data; //we fill the function created previously with the entrees
-			PreviousHash=previousHash;
-			TimeStamp = timestamp;
+			Index = 0;
+            TimeStamp = timeStamp;
+            PreviousHash = previousHash;
+            Transactions = transactions;
 
-			mineBlock();
 		}
 
     	public string CalculateHash()  
     	{  
     		SHA256 sha256 = SHA256.Create();
-    		byte[] inputBytes = Encoding.ASCII.GetBytes($"{PreviousHash}-{Data}-{Nonce}");  
+    		byte[] inputBytes = Encoding.ASCII.GetBytes($"{TimeStamp}-{PreviousHash ?? ""}-{JsonConvert.SerializeObject(Transactions)}-{Nonce}"); 
         	byte[] outputBytes = sha256.ComputeHash(inputBytes);  
         	return Convert.ToBase64String(outputBytes); 
     	}
 
-    	public void mineBlock()
+    	public void mineBlock(int difficulty)
     	{
-    		Nonce = 0;
 
-    		int difficulty = 3; // Number of symbol that we want
     		string proof = new String('g',difficulty); //to have 3 times g at the beginning 
     		do
     		{
@@ -62,13 +68,17 @@ namespace class_block
 
     	public override string ToString()
     	{
-    		return ("Data: "+Data+"\nPreviousHash: "+PreviousHash+"\nHash: "+ Hash+"\nTime: "+ TimeStamp.ToString("G"));
+            StringBuilder res = new StringBuilder();
+            res.Append("PreviousHash: "+PreviousHash+"\nHash: "+ Hash+"\nTime: "+ TimeStamp.ToString("G"));
+            for(int i = 0; i < Transactions.Count; i++)
+            {
+                res.Append("\n--- Transaction " + i + " ---\n");
+                res.Append(Transactions[i].ToString());
+            }
+
+            return res.ToString();
     	}
 	} // end of the class 
 
 
 } //end of the namespace
-
-
-
-

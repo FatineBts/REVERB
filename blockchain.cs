@@ -14,6 +14,8 @@ using System.Collections.Generic; // to use list
 using System.Collections;
 using System.Linq; // to use Last
 using class_block;
+using class_transaction;
+
 
 namespace class_blockchain
 {
