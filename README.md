@@ -12,6 +12,8 @@ Files:
 - IBlocks.cs: interface. 
 - blockchain.cs: create a set of blocks et update the informations (previous hash...).
 - transactions.cs: modelize transferts between different users. 
+- generation_pubkey.sh: to create the public and private keys.
+- keys.cs: to save public keys in a dictionnary. 
 - REVERB.csproj, bin folder and obj folder: to use dotnet. 
 
 
@@ -29,4 +31,6 @@ Fichiers :
 - IBlocks.cs : correspond à l'interface de la classe Block. 
 - blockchain.cs : crée un ensemble de blocks et met à jour les informations (précédents Hash,transactions...)
 - transactions.cs : modélise les transferts entre plusieurs personnes. 
+- generation_pubkey.sh : pour créer les clés publiques et privés.
+- keys.cs : pour stocker les clés publiques dans un dictionnaire. 
 - REVERB.csproj, bin folder and obj folder : pour utiliser dotnet.  
