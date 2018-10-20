@@ -16,6 +16,11 @@ Files:
 - keys.cs: to save public keys in a dictionnary. 
 - REVERB.csproj, bin folder and obj folder: to use dotnet. 
 
+Remark : 
+To add a new library, please use dotnet. 
+Example : 
+dotnet add package NBitcoin
+dotnet restore
 
 FR : 
 Il s'agit d'un projet réalisé de la cadre de la 5 ème de Mathématiques Appliquées et Informatique à Polytech Sorbonne. 
@@ -34,3 +39,9 @@ Fichiers :
 - generation_pubkey.sh : pour créer les clés publiques et privés.
 - keys.cs : pour stocker les clés publiques dans un dictionnaire. 
 - REVERB.csproj, bin folder and obj folder : pour utiliser dotnet.  
+
+Remarque : 
+Pour utiliser une nouvelle bibliothèque, utilisez dotnet.
+Par exemple : 
+dotnet add package NBitcoin
+dotnet restore 
