@@ -18,8 +18,8 @@ Files:
 
 Remark : To add a new library, please use dotnet. 
 Example : 
-dotnet add package NBitcoin
-dotnet restore
+- dotnet add package NBitcoin
+- dotnet restore
 
 FR : 
 Il s'agit d'un projet réalisé de la cadre de la 5 ème de Mathématiques Appliquées et Informatique à Polytech Sorbonne. 
@@ -40,6 +40,6 @@ Fichiers :
 - REVERB.csproj, bin folder and obj folder : pour utiliser dotnet.  
 
 Remarque : Pour utiliser une nouvelle bibliothèque, utilisez dotnet.
-Par exemple : 
-dotnet add package NBitcoin
-dotnet restore 
+Par exemple : 	
+- dotnet add package NBitcoin 
+- dotnet restore 
