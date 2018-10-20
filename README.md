@@ -16,8 +16,7 @@ Files:
 - keys.cs: to save public keys in a dictionnary. 
 - REVERB.csproj, bin folder and obj folder: to use dotnet. 
 
-Remark : 
-To add a new library, please use dotnet. 
+Remark : To add a new library, please use dotnet. 
 Example : 
 dotnet add package NBitcoin
 dotnet restore
@@ -40,8 +39,7 @@ Fichiers :
 - keys.cs : pour stocker les clés publiques dans un dictionnaire. 
 - REVERB.csproj, bin folder and obj folder : pour utiliser dotnet.  
 
-Remarque : 
-Pour utiliser une nouvelle bibliothèque, utilisez dotnet.
+Remarque : Pour utiliser une nouvelle bibliothèque, utilisez dotnet.
 Par exemple : 
 dotnet add package NBitcoin
 dotnet restore 
