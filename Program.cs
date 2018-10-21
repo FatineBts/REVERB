@@ -9,11 +9,13 @@ Participants : Yassine ABBAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN -
 */
 
 using System;
+using Newtonsoft.Json;
 using class_blockchain;
 using class_block;
 using inter_block;
 using class_transaction;
-using Newtonsoft.Json;
+using class_person;
+using System.Text;
 
 namespace MainProgram
 {
@@ -27,43 +29,46 @@ namespace MainProgram
 			// Creating transactions
 			//Test 1 :
 
-			blockchain.CreateTransaction(new Transaction("Aurélien", "Fatine", 20)); 
+			Person Aurel = new Person("Aurélien");
+			Person Fatine = new Person("Fatine");
+			Person Yassine = new Person("Yassine");
+			Person Geng = new Person("Geng");
+			Person Alexia = new Person("Alexia");
+
+			blockchain.CreateTransaction(new Transaction(Aurel, Fatine, 20)); 
 
 			// miner process
-			blockchain.ProcessPendingTransactions("Yassine");
+			blockchain.ProcessPendingTransactions(Yassine);
 
 			// Creating transactions
 			//Test 2 :
 
-			blockchain.CreateTransaction(new Transaction("Fatine", "Geng", 5));
-            blockchain.CreateTransaction(new Transaction("Fatine", "Alexia", 5));
-            blockchain.ProcessPendingTransactions("Yassine");
+			blockchain.CreateTransaction(new Transaction(Fatine, Geng, 5));
+            blockchain.CreateTransaction(new Transaction(Fatine, Alexia, 5));
+            blockchain.ProcessPendingTransactions(Yassine);
 
 
-            Console.WriteLine($"Aurélien' balance: {blockchain.GetBalance("Aurélien")}");
-            Console.WriteLine($"Fatine' balance: {blockchain.GetBalance("Fatine")}");
-            Console.WriteLine($"Alexia' balance: {blockchain.GetBalance("Alexia")}");
-            Console.WriteLine($"Geng' balance: {blockchain.GetBalance("Geng")}");
-            Console.WriteLine($"Yassine' balance: {blockchain.GetBalance("Yassine")}");
+            Console.WriteLine($"Aurélien' balance: {blockchain.GetBalance(Aurel)}");
+            Console.WriteLine($"Fatine' balance: {blockchain.GetBalance(Fatine)}");
+            Console.WriteLine($"Alexia' balance: {blockchain.GetBalance(Alexia)}");
+            Console.WriteLine($"Geng' balance: {blockchain.GetBalance(Geng)}");
+            Console.WriteLine($"Yassine' balance: {blockchain.GetBalance(Yassine)}");
 
             Console.WriteLine("=========================");
 
             Console.WriteLine("=========================");
             Console.WriteLine($"blockchain");
-            Console.WriteLine(JsonConvert.SerializeObject(blockchain, Formatting.Indented));
+            // Console.WriteLine(JsonConvert.SerializeObject(blockchain, Formatting.Indented)); //convert into Jason format 
 			Console.ReadKey();
+			Person test = new Person();
+			Person des = new Person();
 
-
-			// Test Block 
-			//Block block0 = new Block("Block 0",blockchain._lastBlockHash,DateTime.Now);
-			
-			// // // Test Blockchain
-			//blockchain.AddBlock(block0);
-			//Console.WriteLine(blockchain);
-			
-			//Block block1 = new Block("Block 1",blockchain._lastBlockHash,DateTime.Now);
-			//blockchain.AddBlock(block1);
-			//Console.WriteLine(blockchain);
+			Transaction flu = new Transaction(test,des,100);
+			if (flu.verify_signature())
+			{
+				Console.WriteLine("Bonne signature");
+			}
+			else Console.WriteLine("Mauvaise");
 		}
 	}
 }
