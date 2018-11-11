@@ -684,10 +684,11 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
+        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -719,23 +720,23 @@
     ]
   },
   "packageFolders": {
-    "/home/abbar/.nuget/packages/": {},
-    "/home/abbar/.dotnet/sdk/NuGetFallbackFolder": {}
+    "/Users/fatine/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/abbar/Bureau/MAIN5/REVERB/REVERB/REVERB.csproj",
+      "projectUniqueName": "/Users/fatine/Desktop/Reverb/REVERB/REVERB.csproj",
       "projectName": "REVERB",
-      "projectPath": "/home/abbar/Bureau/MAIN5/REVERB/REVERB/REVERB.csproj",
-      "packagesPath": "/home/abbar/.nuget/packages/",
-      "outputPath": "/home/abbar/Bureau/MAIN5/REVERB/REVERB/obj/",
+      "projectPath": "/Users/fatine/Desktop/Reverb/REVERB/REVERB.csproj",
+      "packagesPath": "/Users/fatine/.nuget/packages/",
+      "outputPath": "/Users/fatine/Desktop/Reverb/REVERB/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/home/abbar/.dotnet/sdk/NuGetFallbackFolder"
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/abbar/.nuget/NuGet/NuGet.Config"
+        "/Users/fatine/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"

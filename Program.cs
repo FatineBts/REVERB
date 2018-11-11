@@ -12,17 +12,17 @@ using System;
 using Newtonsoft.Json;
 using class_blockchain;
 using class_block;
-using inter_block;
 using class_transaction;
 using class_person;
 using System.Text;
+using class_smartgrid; 
 
 namespace MainProgram
 {
 	class program
 	{
-		static void Main()
-		{		
+		static void Run()
+		{
 			// Creating a new chain
 			Blockchain blockchain = new Blockchain();
 
@@ -35,7 +35,9 @@ namespace MainProgram
 			Person Geng = new Person("Geng");
 			Person Alexia = new Person("Alexia");
 
-			blockchain.CreateTransaction(new Transaction(Aurel, Fatine, 20)); 
+			Transaction transaction = new Transaction(Aurel, Fatine, 20); 
+
+			blockchain.CreateTransaction(transaction); 
 
 			// miner process
 			blockchain.ProcessPendingTransactions(Yassine);
@@ -55,7 +57,6 @@ namespace MainProgram
             Console.WriteLine($"Yassine' balance: {blockchain.GetBalance(Yassine)}");
 
             Console.WriteLine("=========================");
-
             Console.WriteLine("=========================");
             Console.WriteLine($"blockchain");
             // Console.WriteLine(JsonConvert.SerializeObject(blockchain, Formatting.Indented)); //convert into Jason format 
@@ -69,6 +70,24 @@ namespace MainProgram
 				Console.WriteLine("Bonne signature");
 			}
 			else Console.WriteLine("Mauvaise");
+
+            Console.WriteLine("=========================");
+            Console.WriteLine("=========================");
+            Console.WriteLine($"SmartGrid");
+
+			SmartGrid smartgrid = new SmartGrid(Fatine,10,1, "TV"); 
+			Console.WriteLine("Name of the user : " + smartgrid.Person.name);
+			Console.WriteLine(smartgrid.Amount);
+			Console.WriteLine(smartgrid.CreateTask(Geng, 20, 1, "Computer").Amount); //returns 20
+			Console.WriteLine(smartgrid.RandomTask().Name); //returns 20
+
+		}
+
+		static void Main()
+		{		
+
+			Run(); //easier to launch some simulations
+
 		}
 	}
 }
