@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.IO;
 using class_task;
+using CsvHelper; 
 
 namespace class_person
 {
@@ -23,7 +24,7 @@ namespace class_person
 			// Save public key information
 			public_key = key_pair.ExportParameters(false);
 
-			Console.WriteLine(survey);
+			//Console.WriteLine(survey);
 		}
 
 		public Person(string nom)
@@ -48,12 +49,28 @@ namespace class_person
 
 			return key_pair.VerifyData(data_to_be_verify, new SHA256CryptoServiceProvider(), Convert.FromBase64String(sign_hash));
 		}
-
-		public Task action()
+		
+		
+		public void action(String current_time) //à remettre de type Task
 		{
-			var a = 1;
-		}
+			//var a = 1; //nmbre aléatoire et on fonction du nombre on prend une ligne 
+			//faudrait asigner une tache à une personne
+			int i = 0;
 
+			foreach (char line in survey)
+			{
+				int random = (new Random()).Next(0, 283); //number of line
+				i++; 
+
+    			if (i==random)
+    			{
+        			Console.WriteLine("Test action(String current_time : ok"); 	
+    			}
+			}
+
+			i = 0; 
+		}
+	
 		public override string ToString()
 		{
 			return name+Encoding.UTF8.GetString(public_key.Modulus);
