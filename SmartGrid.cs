@@ -14,7 +14,6 @@ namespace class_smartgrid
 	public class SmartGrid
 	{
 
-		enum Level {Washing_machine, TV, Kitchen, Computer, Tool_bathroom, Cook, Light};
 		// enum Hour {early_morning, morning, noon, afternoon, evening, midnight}; 
 
 		public List<Task> _task { get; private set;}
@@ -39,7 +38,7 @@ namespace class_smartgrid
         {
             foreach (var personne in _list_maison)
             {
-                // personne.action(current_time);
+                // personne.action(current_time,task);
             }
 
             //order the tasks regarding the points of the tasks

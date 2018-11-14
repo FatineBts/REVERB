@@ -9,27 +9,18 @@ namespace class_task
 		public enum Level {Washing_machine, TV, Kitchen, Computer, Tool_bathroom, Cook, Light};
 
 		// title of the task (number that will corresponds to the task)
-		Level title = (Level)(0);//(Level)(new Random()).Next(0, 7); - j'ai mis à Washing_machine pour faire un test
-		// consumption of the task for the duration
+		Level _title = (Level)(0);//(Level)(new Random()).Next(0, 7); - j'ai mis à Washing_machine pour faire un test
+    public Level set_title(int number){ _title = (Level)(number); return _title;}
+    // consumption of the task for the duration
 		float consumption;
 		// duration of the task
 		DateTime duration;
 		//points given to a task
 		public int points; 
 
-/*
-		public void test()
-		{
-
-			Console.WriteLine(Level.Washing_machine); // gives 0
-			Console.WriteLine(title); // gives 0
-
-		}
-
-*/
 		public void points_attribution()
 		{
-			switch (title)
+			switch (_title)
       		{
           		case Level.Washing_machine:
               		points = 1; 

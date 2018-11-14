@@ -99,12 +99,10 @@ namespace MainProgram
 			*/
 			Task task = new Task();
 			task.points_attribution();
-			Console.WriteLine("task.points :"); 
-			Console.WriteLine(task.points);
+			Console.WriteLine("task.points :" + task.points); 
+			//task.set_title(3);
+			lambda.action(current_time,task);
 			
-			lambda.action(current_time); 
-			
-
 		}
 
 		static void Main()

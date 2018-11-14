@@ -11,11 +11,10 @@ namespace class_person
 	{
 		// survey of human habit done by Tomaro team
 		private static String survey = File.ReadAllText("Data/SondageHabitudes.csv");
-
 		public string name {get; private set;}
 		private RSACryptoServiceProvider key_pair;
 		public RSAParameters public_key {get; private set;}
-	
+
 		public Person()
 		{
 			name = "Default";
@@ -51,24 +50,99 @@ namespace class_person
 		}
 		
 		
-		public void action(String current_time) //à remettre de type Task
+		public void action(String current_time, Task task) 
 		{
-			//var a = 1; //nmbre aléatoire et on fonction du nombre on prend une ligne 
 			//faudrait asigner une tache à une personne
-			int i = 0;
+			int nbiter = 0;
+			string[] lines = File.ReadAllLines("Data/SondageHabitudes.csv");
+			string[] column;  
+			int iterateur;
+			int number_tasks = 20;  
+			
+			//for( int i = 1; i < number_tasks; i ++){
 
-			foreach (char line in survey)
+			foreach (char l in survey) //we check the data base 
 			{
-				int random = (new Random()).Next(0, 283); //number of line
-				i++; 
+				int random = (new Random()).Next(1, 284); //number of line
 
-    			if (i==random)
+    			if (nbiter == 0)
     			{
-        			Console.WriteLine("Test action(String current_time : ok"); 	
-    			}
-			}
+ 					Console.WriteLine("Line:");
+        			Console.WriteLine(lines[random]); 
+					column = lines[random].Split(',');
 
-			i = 0; 
+					int random_print = random + 1; 
+        			Console.WriteLine("line selected : " + random_print);
+
+        			Console.WriteLine("l1");
+        			for(iterateur = 0; iterateur < 7 ; iterateur++) //columns B - H - Jour travaillé - Jeux vidéos + TV
+        			{
+ 						Console.WriteLine(column[iterateur]); 
+ 						task.set_title(1); //TV
+        			}
+
+        			Console.WriteLine("l2");
+        			for(iterateur = 7; iterateur < 14; iterateur++) //I - O -  Jour travaillé - Ordinateur/Tablette
+        			{
+ 						Console.WriteLine(column[iterateur]);
+ 						task.set_title(3);  //Computer
+        			}
+
+        			Console.WriteLine("l3");
+        			for(iterateur = 14; iterateur < 21; iterateur++)  //P - V -  Jour travaillé - Four 
+        			{	
+        				Console.WriteLine(column[iterateur]); 
+        				task.set_title(2); //Kitchen
+        			}
+
+					Console.WriteLine("l4");
+        			for(iterateur = 21; iterateur < 28; iterateur++) //W - AC -  Jour travaillé - Appareil cuisine courte durée (machine café...)
+        			{
+        				Console.WriteLine(column[iterateur]);
+        				task.set_title(5); //Cook
+        			}
+
+        			Console.WriteLine("l5");
+        			for(iterateur = 28; iterateur < 35; iterateur++) //AD - AJ -  Jour travaillé - Appareil salle de bain courte durée (lisseur...)
+        			{
+        				Console.WriteLine(column[iterateur]);
+        				task.set_title(4); //Tool_bathroom
+        			}
+
+        			Console.WriteLine("l6");
+        			for(iterateur = 35; iterateur < 42; iterateur++) //AK - AQ - Jour non travaillé - Jeux vidéos + TV
+        			{
+        				Console.WriteLine(column[iterateur]);
+        			}
+
+					Console.WriteLine("l7");
+        			for(iterateur = 42; iterateur < 49; iterateur++) //AR - AX - Jour non travaillé - Ordinateur/Tablette
+        			{
+        				Console.WriteLine(column[iterateur]);
+        			}
+
+        			Console.WriteLine("l8");
+        			for(iterateur = 49; iterateur < 56 ; iterateur++) //AY - BE - Jour non travaillé - Four
+        			{
+        				Console.WriteLine(column[iterateur]);
+        			}
+
+        			Console.WriteLine("l9");
+        			for(iterateur = 56; iterateur < 63 ; iterateur++) //BF - BL - Jour non travaillé - Appareil cuisine courte durée (machine café...)
+        			{
+        				Console.WriteLine(column[iterateur]);
+        			}
+
+        			Console.WriteLine("l10");
+        			for(iterateur = 63; iterateur < 70 ; iterateur++) //BM - BS - Jour non travaillé - Appareil salle de bain courte durée (lisseur...)
+        			{
+        				Console.WriteLine(column[iterateur]);
+        			}
+
+        			nbiter = 1;  //to have only one line 
+    			}
+			}//end foreach 
+ 		//}//end for 
 		}
 	
 		public override string ToString()
