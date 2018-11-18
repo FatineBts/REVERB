@@ -83,26 +83,19 @@ namespace MainProgram
    			Console.WriteLine($"SmartGrid");
 
 			// global variable of time
-			String current_time = "08:02";
+			String current_time;
 			SmartGrid s = new SmartGrid();
-			Person lambda = new Person(); //in this class we load the data once for all 
+			// Person lambda = new Person(); //in this class we load the data once for all 
 			
-			/*
+			
 			while(true)
 			{
-				current_time = DateTime.Now.ToString("HH:mm:ss"); //pour savoir si de nouvelles taches ont été crées, on parcourt la liste
+				current_time = DateTime.Now.ToString(); //pour savoir si de nouvelles taches ont été crées, on parcourt la liste
 				s.update(current_time);
-
 				// we suppose that 1 s is equivalent to 1 min in the process
 				System.Threading.Thread.Sleep(1000);
 			}
-			*/
-			Task task = new Task();
-			task.points_attribution();
-			Console.WriteLine("task.points :" + task.points); 
-			//task.set_title(3);
-			lambda.action(current_time,task);
-			
+					
 		}
 
 		static void Main()

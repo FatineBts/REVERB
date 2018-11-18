@@ -17,6 +17,7 @@ namespace class_smartgrid
 		// enum Hour {early_morning, morning, noon, afternoon, evening, midnight}; 
 
 		public List<Task> _task { get; private set;}
+        public List<Person> _list_maison {get; private set;}
 
         public SmartGrid()
         {
@@ -25,7 +26,7 @@ namespace class_smartgrid
             InitPerson();
         }
 
-        public List<Person> _list_maison {get; private set;}
+        
 
         public void InitPerson()
         {
@@ -36,23 +37,17 @@ namespace class_smartgrid
 
         public void update(String current_time)
         {
+            Task tache;
             foreach (var personne in _list_maison)
             {
-                // personne.action(current_time,task);
-            }
+                tache = personne.action(current_time);
 
-            //order the tasks regarding the points of the tasks
-            foreach (var personne in _list_maison)
-            {
-                
             }
-
         }
 
 	}
 
 }
-
 
 /*
 	Etape 1 : on reprend la base de données en TXT et on retranscrit le fichier Python qui l'analysais en C#. Le fichier Python écrit en C# donnera une fonction "comportement" dans la classe SmartGrid. Cette fonction va servir à lire la base de données et créer des listes de personnes avec des besoins, des horaires, leur nom etc.-> GENG 
