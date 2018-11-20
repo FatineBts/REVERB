@@ -35,9 +35,9 @@ namespace class_smartgrid
             //Console.WriteLine(_list_maison[0].name);
         }
 
-        public void update(String current_time)
+        public void update(DateTime current_time)
         {
-            Task tache;
+            List<Task> tache;
             foreach (var personne in _list_maison)
             {
                 tache = personne.action(current_time);

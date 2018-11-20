@@ -83,16 +83,18 @@ namespace MainProgram
    			Console.WriteLine($"SmartGrid");
 
 			// global variable of time
-			String current_time;
+			DateTime current_time = DateTime.Now;
+			// DateTime current_time = new DateTime(2018, 11, 21, 19, 20,30); // (YYYY, MM, DD, HH,mm,ss)
 			SmartGrid s = new SmartGrid();
 			// Person lambda = new Person(); //in this class we load the data once for all 
 			
 			
 			while(true)
 			{
-				current_time = DateTime.Now.ToString(); //pour savoir si de nouvelles taches ont été crées, on parcourt la liste
+				Console.WriteLine("\n"+current_time.ToString());
 				s.update(current_time);
 				// we suppose that 1 s is equivalent to 1 min in the process
+				current_time = current_time.AddMinutes(1.0);
 				System.Threading.Thread.Sleep(1000);
 			}
 					

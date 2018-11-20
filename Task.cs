@@ -14,9 +14,24 @@ namespace class_task
     // consumption of the task for the duration
 		float consumption;
 		// duration of the task
-		DateTime duration;
+		DateTime begin_time;
+    DateTime end_time;
 		//points given to a task
 		public int points; 
+
+    public Task(int lvl, DateTime begin_time_task, int duration)
+    {
+      // _title = lvl;
+      begin_time = begin_time_task;
+      end_time = begin_time.AddMinutes(duration);
+      consumption = calculate_consumption(duration);
+    }
+
+    public float calculate_consumption(int duration)
+    {
+      float consumption = 1;
+      return consumption;
+    }
 
 		public void points_attribution()
 		{
