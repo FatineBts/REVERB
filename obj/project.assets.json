@@ -726,11 +726,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/fatine/Desktop/Reverb/REVERB/REVERB.csproj",
+      "projectUniqueName": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
       "projectName": "REVERB",
-      "projectPath": "/Users/fatine/Desktop/Reverb/REVERB/REVERB.csproj",
+      "projectPath": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
       "packagesPath": "/Users/fatine/.nuget/packages/",
-      "outputPath": "/Users/fatine/Desktop/Reverb/REVERB/obj/",
+      "outputPath": "/Users/fatine/Desktop/REVERB/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
