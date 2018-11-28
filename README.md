@@ -2,6 +2,8 @@ REVERB PROJECT - PROJET REVERB
 
 ![reverb_logo](https://user-images.githubusercontent.com/23095219/49184256-2dc30b80-f35f-11e8-8993-9886b3b68fd8.png)
 
+Logo drawn by Fatine Bentires Alj and Mina Pêcheux - Logo product by Mina Pêcheux 
+
 Logo dessiné par Fatine Bentires Alj et Mina Pêcheux - Logo produit par Mina Pêcheux 
 
 EN: 
