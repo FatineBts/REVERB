@@ -62,18 +62,3 @@ Remarque : Pour utiliser une nouvelle bibliothèque, utilisez dotnet.
 Par exemple : 	
 - dotnet add package NBitcoin 
 - dotnet restore 
-
-Commandes utiles :  
-
-git branch nom_branche
-
-git checkout nom_branche
-
-git push --set-upstream origin nom_branche
-
-git add *
-
-git commit -m "message"
-
-git push
-
