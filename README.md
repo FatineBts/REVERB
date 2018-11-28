@@ -1,3 +1,5 @@
+REVERB PROJECT - PROJET REVERB
+
 EN: 
 This is a project realized during the fifth year of Applied Mathematics and Computer Science at the graduate school of engineering Polytech Sorbonne. The aim of the project is to modelize self-sufficient houses powered solely by solar energy and to use the Blockchain concept to represent the transactions of energy. 
 Different steps are required: the creation of the Smart Grid and the Blockchain in C#. Their connection and also the use of Unity3D and of the virtual reality headset Oculus Rift for the 3D representation.
