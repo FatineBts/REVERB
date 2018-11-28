@@ -6,10 +6,10 @@ namespace class_task
 	public class Task
 	{
 
-		public enum Level {Washing_machine, TV, Kitchen, Computer, Tool_bathroom, Cook, Light};
+		public enum Level {Washing_machine, TV, Oven_kitchen, Tool_Kitchen, Tool_bathroom, Heating, Light};
 
 		// title of the task (number that will corresponds to the task)
-		Level _title = (Level)(0);//(Level)(new Random()).Next(0, 7); - j'ai mis à Washing_machine pour faire un test
+		public Level _title;//(Level)(new Random()).Next(0, 7); - j'ai mis à Washing_machine pour faire un test
     public Level set_title(int number){ _title = (Level)(number); return _title;}
     // consumption of the task for the duration
 		float consumption;
@@ -21,11 +21,13 @@ namespace class_task
 
     public Task(int lvl, DateTime begin_time_task, int duration)
     {
-      // _title = lvl;
+      _title = (Level)(lvl);
+      //Console.WriteLine(_title);
       begin_time = begin_time_task;
       end_time = begin_time.AddMinutes(duration);
       consumption = calculate_consumption(duration);
     }
+
 
     public float calculate_consumption(int duration)
     {
@@ -43,16 +45,16 @@ namespace class_task
           		case Level.TV:
               		points = 2;
               		break;
-          		case Level.Kitchen:
+          		case Level.Oven_kitchen:
               		points = 3;
               		break;
-          		case Level.Computer:
+          		case Level.Tool_Kitchen:
               		points = 4;
               		break;              		              	
           		case Level.Tool_bathroom:
               		points = 5;
               		break;       
-          		case Level.Cook:
+          		case Level.Heating:
               		points = 6;
               		break;  
           		case Level.Light:

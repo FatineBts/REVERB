@@ -84,17 +84,21 @@ namespace MainProgram
 
 			// global variable of time
 			DateTime current_time = DateTime.Now;
-			// DateTime current_time = new DateTime(2018, 11, 21, 19, 20,30); // (YYYY, MM, DD, HH,mm,ss)
+			//DateTime current_time = new DateTime(2018, 11, 21, 19, 20,30); // (YYYY, MM, DD, HH,mm,ss)
 			SmartGrid s = new SmartGrid();
 			// Person lambda = new Person(); //in this class we load the data once for all 
 			
-			
-			while(true)
+			Person Joey = new Person();
+			Joey.Chosen_Task(Joey, 2,current_time,15);  
+			double p = Joey.probability(26);
+			Console.WriteLine("probability : " + p); 
+	
+			while(true) //each min we check the list of tasks
 			{
-				Console.WriteLine("\n"+current_time.ToString());
+				Console.WriteLine("\n"+current_time.ToString()); 
 				s.update(current_time);
 				// we suppose that 1 s is equivalent to 1 min in the process
-				current_time = current_time.AddMinutes(1.0);
+				current_time = current_time.AddMinutes(30.0); //each 30 min just for the test 
 				System.Threading.Thread.Sleep(1000);
 			}
 					
