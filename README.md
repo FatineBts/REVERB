@@ -2,9 +2,9 @@ REVERB PROJECT - PROJET REVERB
 
 ![reverb_logo](https://user-images.githubusercontent.com/23095219/49184256-2dc30b80-f35f-11e8-8993-9886b3b68fd8.png)
 
-Logo drawn by Fatine Bentires Alj and Mina Pêcheux - Logo product by Mina Pêcheux 
+EN: Logo drawn by Fatine Bentires Alj and Mina Pêcheux - Logo product by Mina Pêcheux 
 
-Logo dessiné par Fatine Bentires Alj et Mina Pêcheux - Logo produit par Mina Pêcheux 
+FR : Logo dessiné par Fatine Bentires Alj et Mina Pêcheux - Logo produit par Mina Pêcheux 
 
 EN: 
 This is a project realized during the fifth year of Applied Mathematics and Computer Science at the graduate school of engineering Polytech Sorbonne. The aim of the project is to modelize self-sufficient houses powered solely by solar energy and to use the Blockchain concept to represent the transactions of energy. 
