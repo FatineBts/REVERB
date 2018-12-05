@@ -1,5 +1,9 @@
 {
   "version": 1,
+<<<<<<< HEAD
   "dgSpecHash": "m38TVLjsE2sVA2+ZDodZoiKfPDB0w310GedBT9uVLIWiV05uzQRm8KWwab4H1T2hE3bAlPR8BSVVQUxPgHipQA==",
+=======
+  "dgSpecHash": "/lrn5VGA4j/Ll5I7O+2D3nb/JkvZTqMyiPif6+oHPVFKsRk8ZOGmi/CZtul2+2Gvru9XdZyTCRDJgYf88QLZGg==",
+>>>>>>> feature/smartgridcontract
   "success": true
 }

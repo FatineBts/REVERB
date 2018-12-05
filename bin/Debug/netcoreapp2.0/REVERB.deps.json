@@ -1,56 +1,36 @@
 {
   "runtimeTarget": {
-    "name": ".NETCoreApp,Version=v2.1",
-<<<<<<< HEAD
-    "signature": "883f5ab0e357ef56d00e5851b3cee30b45ba651b"
-=======
-    "signature": "c2a18116974a9ed1eb2bf21ceed65035d6311281"
->>>>>>> feature/smartgridcontract
+    "name": ".NETCoreApp,Version=v2.0",
+    "signature": "9ff94c2da3eb8b86ffc9ba30f6ed8aa94f4122c2"
   },
   "compilationOptions": {},
   "targets": {
-    ".NETCoreApp,Version=v2.1": {
+    ".NETCoreApp,Version=v2.0": {
       "REVERB/1.0.0": {
         "dependencies": {
-<<<<<<< HEAD
-=======
-          "CsvHelper": "9.0.2",
->>>>>>> feature/smartgridcontract
+          "CsvHelper": "9.1.0",
           "Newtonsoft.Json": "11.0.2"
         },
         "runtime": {
           "REVERB.dll": {}
         }
       },
-<<<<<<< HEAD
-=======
-      "CsvHelper/9.0.2": {
+      "CsvHelper/9.1.0": {
         "dependencies": {
           "Microsoft.CSharp": "4.4.0",
           "System.Reflection.TypeExtensions": "4.4.0"
         },
         "runtime": {
-          "lib/netstandard2.0/CsvHelper.dll": {
-            "assemblyVersion": "9.0.0.0",
-            "fileVersion": "9.0.0.0"
-          }
+          "lib/netstandard2.0/CsvHelper.dll": {}
         }
       },
       "Microsoft.CSharp/4.4.0": {},
->>>>>>> feature/smartgridcontract
       "Newtonsoft.Json/11.0.2": {
         "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.2.21924"
-          }
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
-<<<<<<< HEAD
-      }
-=======
       },
       "System.Reflection.TypeExtensions/4.4.0": {}
->>>>>>> feature/smartgridcontract
     }
   },
   "libraries": {
@@ -59,31 +39,26 @@
       "serviceable": false,
       "sha512": ""
     },
-<<<<<<< HEAD
-=======
-    "CsvHelper/9.0.2": {
+    "CsvHelper/9.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-lOO3g6KmpwjT+QkAri0VCxtolPM0N53JLgskGH5rkp2uCJsexjBkCWWNCJzXRHsebFcXZJjkNT61bUQMeMnLCw==",
-      "path": "csvhelper/9.0.2",
-      "hashPath": "csvhelper.9.0.2.nupkg.sha512"
+      "sha512": "sha512-GHGuxMnOY/hhDYwJFYaH0cgvd6y70QwAVtx2nIiEJN2fnep6esnX2NNTHS4lbUoSCzqVl1S18euXzDjZnzOxRQ==",
+      "path": "csvhelper/9.1.0",
+      "hashPath": "csvhelper.9.1.0.nupkg.sha512"
     },
     "Microsoft.CSharp/4.4.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ShGjgRL3UHUXcoPSlq8jDB6b+9WHo4n8VcY9ex7egt6kuHFuK3Z6BUN9ClF3Y8dR1yIoaRkHPQBfX/IH5i/YXg==",
+      "sha512": "sha512-vvVR/B08YVghQ4jHEloxqw2ZWzEGE1AOA5E0DioUM3ujbXz6FD3AfB/0Jl2ohJPd0nXYGwmPe1En6HTsSriq1A==",
       "path": "microsoft.csharp/4.4.0",
       "hashPath": "microsoft.csharp.4.4.0.nupkg.sha512"
     },
->>>>>>> feature/smartgridcontract
     "Newtonsoft.Json/11.0.2": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
       "path": "newtonsoft.json/11.0.2",
       "hashPath": "newtonsoft.json.11.0.2.nupkg.sha512"
-<<<<<<< HEAD
-=======
     },
     "System.Reflection.TypeExtensions/4.4.0": {
       "type": "package",
@@ -91,7 +66,6 @@
       "sha512": "sha512-JRxOAH6by+wn1gNnZc9jf2HbO/szhMJuLY2w44nEW77354WntXlFzWSVkx6280Uvcl3URZ/At+444vjX0/X1Aw==",
       "path": "system.reflection.typeextensions/4.4.0",
       "hashPath": "system.reflection.typeextensions.4.4.0.nupkg.sha512"
->>>>>>> feature/smartgridcontract
     }
   }
 }

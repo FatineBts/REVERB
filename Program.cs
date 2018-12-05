@@ -16,18 +16,20 @@ using class_transaction;
 using class_person;
 using System.Text;
 using class_smartgrid; 
+using System.Diagnostics;
+using class_task; 
 
 namespace MainProgram
 {
 	class program
 	{
-		static void Run()
+		static void Blockchain()
 		{
 			// Creating a new chain
 			Blockchain blockchain = new Blockchain();
 
-			// Creating transactions
-			//Test 1 :
+			// // Creating transactions
+			// //Test 1 :
 
 			Person Aurel = new Person("Aurélien");
 			Person Fatine = new Person("Fatine");
@@ -39,27 +41,27 @@ namespace MainProgram
 
 			blockchain.CreateTransaction(transaction); 
 
-			// miner process
+			// // miner process
 			blockchain.ProcessPendingTransactions(Yassine);
 
-			// Creating transactions
-			//Test 2 :
+			// // Creating transactions
+			// //Test 2 :
 
 			blockchain.CreateTransaction(new Transaction(Fatine, Geng, 5));
             blockchain.CreateTransaction(new Transaction(Fatine, Alexia, 5));
-            blockchain.ProcessPendingTransactions(Yassine);
+             blockchain.ProcessPendingTransactions(Yassine);
 
 
             Console.WriteLine($"Aurélien' balance: {blockchain.GetBalance(Aurel)}");
             Console.WriteLine($"Fatine' balance: {blockchain.GetBalance(Fatine)}");
             Console.WriteLine($"Alexia' balance: {blockchain.GetBalance(Alexia)}");
-            Console.WriteLine($"Geng' balance: {blockchain.GetBalance(Geng)}");
+   	        Console.WriteLine($"Geng' balance: {blockchain.GetBalance(Geng)}");
             Console.WriteLine($"Yassine' balance: {blockchain.GetBalance(Yassine)}");
 
-            Console.WriteLine("=========================");
-            Console.WriteLine("=========================");
-            Console.WriteLine($"blockchain");
-            // Console.WriteLine(JsonConvert.SerializeObject(blockchain, Formatting.Indented)); //convert into Jason format 
+          	Console.WriteLine("=========================");
+   			Console.WriteLine("=========================");
+   			Console.WriteLine($"blockchain");
+  			Console.WriteLine(JsonConvert.SerializeObject(blockchain, Formatting.Indented)); //convert into Jason format 
 			Console.ReadKey();
 			Person test = new Person();
 			Person des = new Person();
@@ -71,23 +73,38 @@ namespace MainProgram
 			}
 			else Console.WriteLine("Mauvaise");
 
-            Console.WriteLine("=========================");
-            Console.WriteLine("=========================");
-            Console.WriteLine($"SmartGrid");
+   		}
+   		
+   		static void SmartGrid()
+   		{	
 
-			SmartGrid smartgrid = new SmartGrid(Fatine,10,1, "TV"); 
-			Console.WriteLine("Name of the user : " + smartgrid.Person.name);
-			Console.WriteLine(smartgrid.Amount);
-			Console.WriteLine(smartgrid.CreateTask(Geng, 20, 1, "Computer").Amount); //returns 20
-			Console.WriteLine(smartgrid.RandomTask().Name); //returns 20
+   			Console.WriteLine("=========================");
+   			Console.WriteLine("=========================");
+   			Console.WriteLine($"SmartGrid");
 
+			// global variable of time
+			DateTime current_time = DateTime.Now;
+			// DateTime current_time = new DateTime(2018, 11, 21, 19, 20,30); // (YYYY, MM, DD, HH,mm,ss)
+			SmartGrid s = new SmartGrid();
+			// Person lambda = new Person(); //in this class we load the data once for all 
+			
+			
+			while(true)
+			{
+				Console.WriteLine("\n"+current_time.ToString());
+				s.update(current_time);
+				// we suppose that 1 s is equivalent to 1 min in the process
+				current_time = current_time.AddMinutes(1.0);
+				System.Threading.Thread.Sleep(1000);
+			}
+					
 		}
 
 		static void Main()
 		{		
 
-			Run(); //easier to launch some simulations
-
+			//Blockchain(); //easier to launch some simulations
+			SmartGrid();
 		}
 	}
 }
