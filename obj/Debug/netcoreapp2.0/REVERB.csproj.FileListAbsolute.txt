@@ -9,3 +9,14 @@
 /home/geng/REVERB/bin/Debug/netcoreapp2.0/REVERB.pdb
 /home/geng/REVERB/obj/Debug/netcoreapp2.0/REVERB.dll
 /home/geng/REVERB/obj/Debug/netcoreapp2.0/REVERB.pdb
+/Users/fatine/Desktop/REVERB/bin/Debug/netcoreapp2.0/REVERB.deps.json
+/Users/fatine/Desktop/REVERB/bin/Debug/netcoreapp2.0/REVERB.runtimeconfig.json
+/Users/fatine/Desktop/REVERB/bin/Debug/netcoreapp2.0/REVERB.runtimeconfig.dev.json
+/Users/fatine/Desktop/REVERB/bin/Debug/netcoreapp2.0/REVERB.dll
+/Users/fatine/Desktop/REVERB/bin/Debug/netcoreapp2.0/REVERB.pdb
+/Users/fatine/Desktop/REVERB/obj/Debug/netcoreapp2.0/REVERB.csprojAssemblyReference.cache
+/Users/fatine/Desktop/REVERB/obj/Debug/netcoreapp2.0/REVERB.csproj.CoreCompileInputs.cache
+/Users/fatine/Desktop/REVERB/obj/Debug/netcoreapp2.0/REVERB.AssemblyInfoInputs.cache
+/Users/fatine/Desktop/REVERB/obj/Debug/netcoreapp2.0/REVERB.AssemblyInfo.cs
+/Users/fatine/Desktop/REVERB/obj/Debug/netcoreapp2.0/REVERB.dll
+/Users/fatine/Desktop/REVERB/obj/Debug/netcoreapp2.0/REVERB.pdb

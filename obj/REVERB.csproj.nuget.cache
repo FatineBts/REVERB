@@ -1,9 +1,13 @@
 {
   "version": 1,
 <<<<<<< HEAD
+<<<<<<< HEAD
   "dgSpecHash": "m38TVLjsE2sVA2+ZDodZoiKfPDB0w310GedBT9uVLIWiV05uzQRm8KWwab4H1T2hE3bAlPR8BSVVQUxPgHipQA==",
 =======
   "dgSpecHash": "/lrn5VGA4j/Ll5I7O+2D3nb/JkvZTqMyiPif6+oHPVFKsRk8ZOGmi/CZtul2+2Gvru9XdZyTCRDJgYf88QLZGg==",
 >>>>>>> feature/smartgridcontract
+=======
+  "dgSpecHash": "w3edSjRF2H1GQ3svCuF4eO/0dImweA6WVQrv7rtMbvS2lbf7PAh5rZISwyDjOAfiNpRZxjJNkBWVrgb/hTFlvg==",
+>>>>>>> origin/smartgrid
   "success": true
 }
