@@ -888,27 +888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-<<<<<<< HEAD
       "projectUniqueName": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
       "projectName": "REVERB",
       "projectPath": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
       "packagesPath": "/Users/fatine/.nuget/packages/",
       "outputPath": "/Users/fatine/Desktop/REVERB/obj/",
-=======
-      "projectUniqueName": "/home/geng/REVERB/REVERB.csproj",
-      "projectName": "REVERB",
-      "projectPath": "/home/geng/REVERB/REVERB.csproj",
-      "packagesPath": "/home/geng/.nuget/packages/",
-      "outputPath": "/home/geng/REVERB/obj/",
->>>>>>> feature/smartgridcontract
-=======
-      "projectUniqueName": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
-      "projectName": "REVERB",
-      "projectPath": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
-      "packagesPath": "/Users/fatine/.nuget/packages/",
-      "outputPath": "/Users/fatine/Desktop/REVERB/obj/",
->>>>>>> origin/smartgrid
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -957,5 +941,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problème de lecture du fichier cache /Users/fatine/Desktop/REVERB/obj/REVERB.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

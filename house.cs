@@ -4,12 +4,16 @@ using System.Text;
 using System.IO;
 using class_task;
 using CsvHelper; 
+using class_person; 
+using class_block; 
+using class_blockchain; 
 using System.Collections.Generic; // to use list 
+
 namespace class_house
 {
 	public class House
 	{
-		public List<Person> _family { get; private set;}
+		public List<Block> _family { get; private set;}
 		float _solar_panel_battery;
 		private RSACryptoServiceProvider key_pair;
 		public RSAParameters public_key {get; private set;}
@@ -25,9 +29,8 @@ namespace class_house
 			//Console.WriteLine(survey);
 		}
 
-		public AddFamilyMember()
+		public void AddFamilyMember()
 		{
-			Person 
 			_family.Add(CreateFirstBlock());
 		}
 
