@@ -5,6 +5,7 @@ using System.Collections.Generic; // to use list
 using System.Collections;
 using System.Linq; // to use Last
 using class_block;
+using class_blockchain;
 using class_transaction;
 using class_person;
 using class_task;
@@ -14,21 +15,20 @@ namespace class_smartgrid
 	public class SmartGrid
 	{
 
-		// enum Hour {early_morning, morning, noon, afternoon, evening, midnight}; 
+		private Blockchain _blockchain { get;  private set;}
 
-		public List<Task> _task { get; private set;}
-        public List<Person> _list_maison {get; private set;}
+        public List<House> _list_maison {get; private set;}
 
         public SmartGrid()
         {
-            _list_maison = new List<Person>(); //corresponds to the list of persons living in the houses
-            _task = new List<Task>();
-            InitPerson();
+            _list_maison = new Blockchain(); //corresponds to the list of persons living in the houses
+            _list_maison = new List<House>();
+            InitSmartGrid();
         }
 
         
 
-        public void InitPerson()
+        public void InitSmartGrid()
         {
             var Person_file = new StreamReader(File.OpenRead("Data/Person_file.txt"));
             while (!Person_file.EndOfStream) _list_maison.Add(new Person(Person_file.ReadLine()));

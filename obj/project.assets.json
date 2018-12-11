@@ -782,11 +782,10 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
-        ".signature.p7s",
         "LICENSE.md",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
@@ -882,23 +881,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/fatine/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "/home/abbar/.nuget/packages/": {},
+    "/home/abbar/.dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
+      "projectUniqueName": "/home/abbar/Bureau/MAIN5/REVERB/REVERB/REVERB.csproj",
       "projectName": "REVERB",
-      "projectPath": "/Users/fatine/Desktop/REVERB/REVERB.csproj",
-      "packagesPath": "/Users/fatine/.nuget/packages/",
-      "outputPath": "/Users/fatine/Desktop/REVERB/obj/",
+      "projectPath": "/home/abbar/Bureau/MAIN5/REVERB/REVERB/REVERB.csproj",
+      "packagesPath": "/home/abbar/.nuget/packages/",
+      "outputPath": "/home/abbar/Bureau/MAIN5/REVERB/REVERB/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "/home/abbar/.dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/fatine/.nuget/NuGet/NuGet.Config"
+        "/home/abbar/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -941,13 +940,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache /Users/fatine/Desktop/REVERB/obj/REVERB.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
