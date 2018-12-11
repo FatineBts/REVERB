@@ -13,7 +13,7 @@ namespace class_house
 {
 	public class House
 	{
-		public List<Block> _family { get; private set;}
+		public List<Person> _family { get; private set;}
 		float _solar_panel_battery;
 		private RSACryptoServiceProvider key_pair;
 		public RSAParameters public_key {get; private set;}
