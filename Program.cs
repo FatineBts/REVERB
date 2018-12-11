@@ -17,7 +17,8 @@ using class_person;
 using System.Text;
 using class_smartgrid; 
 using System.Diagnostics;
-using class_task; 
+using class_task;
+using class_house;
 
 namespace MainProgram
 {
@@ -31,40 +32,52 @@ namespace MainProgram
 			// // Creating transactions
 			// //Test 1 :
 
-			Person Aurel = new Person("Aurélien");
-			Person Fatine = new Person("Fatine");
-			Person Yassine = new Person("Yassine");
-			Person Geng = new Person("Geng");
-			Person Alexia = new Person("Alexia");
+			Person Aurel = new Person(1,"Aurélien");
+			Person Fatine = new Person(0,"Fatine");
+			Person Yassine = new Person(1,"Yassine");
+			Person Geng = new Person(1,"Geng");
+			Person Alexia = new Person(0,"Alexia");
 
-			Transaction transaction = new Transaction(Aurel, Fatine, 20); 
+			House AurelFamily = new House(0,"Abel");
+			AurelFamily.AddFamilyMember(Aurel);	
+			House FatineFamily = new House(0,"Bentires");
+			FatineFamily.AddFamilyMember(Fatine);
+			House YassineFamily = new House(0,"Abbar");
+			YassineFamily.AddFamilyMember(Yassine);
+			House GengFamily = new House(0,"Ren");
+			GengFamily.AddFamilyMember(Geng);
+
+			House AlexiaFamily = new House(0,"ZOUNIAS-SIRABELLA");
+			AlexiaFamily.AddFamilyMember(Alexia);
+
+			Transaction transaction = new Transaction(AurelFamily, FatineFamily, 20); 
 
 			blockchain.CreateTransaction(transaction); 
 
 			// // miner process
-			blockchain.ProcessPendingTransactions(Yassine);
+			blockchain.ProcessPendingTransactions(YassineFamily);
 
 			// // Creating transactions
 			// //Test 2 :
 
-			blockchain.CreateTransaction(new Transaction(Fatine, Geng, 5));
-            blockchain.CreateTransaction(new Transaction(Fatine, Alexia, 5));
-             blockchain.ProcessPendingTransactions(Yassine);
+			blockchain.CreateTransaction(new Transaction(FatineFamily, GengFamily, 5));
+            blockchain.CreateTransaction(new Transaction(FatineFamily, AlexiaFamily, 5));
+             blockchain.ProcessPendingTransactions(YassineFamily);
 
 
-            Console.WriteLine($"Aurélien' balance: {blockchain.GetBalance(Aurel)}");
-            Console.WriteLine($"Fatine' balance: {blockchain.GetBalance(Fatine)}");
-            Console.WriteLine($"Alexia' balance: {blockchain.GetBalance(Alexia)}");
-   	        Console.WriteLine($"Geng' balance: {blockchain.GetBalance(Geng)}");
-            Console.WriteLine($"Yassine' balance: {blockchain.GetBalance(Yassine)}");
+            Console.WriteLine($"Aurélien' balance: {blockchain.GetBalance(AurelFamily)}");
+            Console.WriteLine($"Fatine' balance: {blockchain.GetBalance(FatineFamily)}");
+            Console.WriteLine($"Alexia' balance: {blockchain.GetBalance(AlexiaFamily)}");
+   	        Console.WriteLine($"Geng' balance: {blockchain.GetBalance(GengFamily)}");
+            Console.WriteLine($"Yassine' balance: {blockchain.GetBalance(YassineFamily)}");
 
           	Console.WriteLine("=========================");
    			Console.WriteLine("=========================");
    			Console.WriteLine($"blockchain");
   			Console.WriteLine(JsonConvert.SerializeObject(blockchain, Formatting.Indented)); //convert into Jason format 
 			Console.ReadKey();
-			Person test = new Person();
-			Person des = new Person();
+			House test = new House();
+			House des = new House();
 
 			Transaction flu = new Transaction(test,des,100);
 			if (flu.verify_signature())
@@ -85,10 +98,10 @@ namespace MainProgram
 			// global variable of time
 			DateTime current_time = DateTime.Now;
 			//DateTime current_time = new DateTime(2018, 11, 21, 19, 20,30); // (YYYY, MM, DD, HH,mm,ss)
-			SmartGrid s = new SmartGrid();
+			SmartGrid s = new SmartGrid(0); // winter 
 			// Person lambda = new Person(); //in this class we load the data once for all 
 			
-			Person Joey = new Person();
+			Person Joey = new Person(1,"Joey");
 			Joey.Chosen_Task(Joey, 2,current_time,15);  
 			double p = Joey.probability(26);
 			Console.WriteLine("probability : " + p); 

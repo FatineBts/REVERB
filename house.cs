@@ -21,9 +21,11 @@ namespace class_house
 		public enum Season {winter, autumn, spring, summer}; // summer <=> 4 kw, spring <=> 3 kw, autumn <=> 2 kw ,winter <=> 1 kw 
 		private Season _season;
 
-		public House(Season season, string name)
+		public House() {;}
+
+		public House(int season, string name)
 		{
-			_season = season; 
+			_season = (Season)(season); 
 			_family = new List<Person>();
 			// Create a key pair
 			key_pair = new RSACryptoServiceProvider();
@@ -61,7 +63,7 @@ namespace class_house
 			_family.Add(NewPerson);
 		}
 
-		public string sign(Person dest, int amount)
+		public string sign(House dest, int amount)
 		{
 			byte[] originalData = Encoding.ASCII.GetBytes(this.ToString() + dest.ToString() + amount.ToString());
 			byte[] signedData = key_pair.SignData(originalData, new SHA256CryptoServiceProvider());

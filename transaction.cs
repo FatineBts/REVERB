@@ -14,18 +14,19 @@ using System.Collections.Generic; // to use list
 using System.Collections;
 using System.Linq; // to use Last
 using class_person;
+using class_house;
 
 namespace class_transaction
 {
 	public class Transaction  
 	{  
-    	public Person FromAddress { get;  private set; }  
-    	public Person ToAddress { get;  private set; }  
+    	public House FromAddress { get;  private set; }  
+    	public House ToAddress { get;  private set; }  
     	public int Amount { get; private set; }
         public string sign_hash {get; private set;}
 
   
-    	public Transaction(Person src, Person dest, int amount)  
+    	public Transaction(House src, House dest, int amount)  
     	{  
             FromAddress = src;
             ToAddress = dest;  

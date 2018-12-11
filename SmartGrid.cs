@@ -9,39 +9,51 @@ using class_blockchain;
 using class_transaction;
 using class_person;
 using class_task;
+using class_house;
 
 namespace class_smartgrid
 {
 	public class SmartGrid
 	{
 
-		private Blockchain _blockchain { get;  private set;}
+		public Blockchain _blockchain { get;  private set;}
 
         public List<House> _list_maison {get; private set;}
 
-        public SmartGrid()
-        {
-            _list_maison = new Blockchain(); //corresponds to the list of persons living in the houses
+
+        public SmartGrid(int season)
+        {   
+            _blockchain = new Blockchain(); 
             _list_maison = new List<House>();
-            InitSmartGrid();
+            InitSmartGrid(season);
         }
 
         
 
-        public void InitSmartGrid()
+        public void InitSmartGrid(int season)
         {
+
             var Person_file = new StreamReader(File.OpenRead("Data/Person_file.txt"));
-            while (!Person_file.EndOfStream) _list_maison.Add(new Person(Person_file.ReadLine()));
+            while (!Person_file.EndOfStream)
+            {
+                var house = new House(season,Person_file.ReadLine());
+                var member = new Person(1,Person_file.ReadLine()); // Father
+                house.AddFamilyMember(member);    
+                _list_maison.Add(house);
+
+            } 
             //Console.WriteLine(_list_maison[0].name);
         }
 
         public void update(DateTime current_time)
         {
             List<Task> tache;
-            foreach (var personne in _list_maison)
+            foreach (var house in _list_maison)
             {
-                tache = personne.action(current_time);
-
+                foreach(var member in house._family)
+                {
+                    tache = member.action(current_time);
+                }
             }
         }
 

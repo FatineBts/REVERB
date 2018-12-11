@@ -16,11 +16,12 @@ using System.Linq; // to use Last
 using class_block;
 using class_transaction;
 using class_person;
+using class_house;
 
 
 namespace class_blockchain
 {
-	class Blockchain
+	public class Blockchain
 		{
 
 			public List<Block> _chain { get; private set;}
@@ -75,13 +76,13 @@ namespace class_blockchain
     			PendingTransactions.Add(transaction);  
 			}
 
-			public void ProcessPendingTransactions(Person minerAddress)  
+			public void ProcessPendingTransactions(House minerAddress)  
 			{  
     			Block block = new Block(DateTime.Now, GetLatestBlock().Hash, PendingTransactions);  
     			AddBlock(block);  
   
     			PendingTransactions = new List<Transaction>();  
-    			CreateTransaction(new Transaction(new Person(), minerAddress, Reward));  
+    			CreateTransaction(new Transaction(new House(), minerAddress, Reward));  
 			}
 
 			public bool IsValid()
@@ -104,7 +105,7 @@ namespace class_blockchain
             return true;
         	}
 
-        	public int GetBalance(Person address) // get balance for one address 
+        	public int GetBalance(House address) // get balance for one address 
         	{
             	int balance = 0;
 

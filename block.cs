@@ -20,7 +20,7 @@ using class_transaction;
 
 namespace class_block
 {
-	class Block
+	public class Block
 	{ //will herite from all the public or protected methods
         public int Index { get; set; }
 
