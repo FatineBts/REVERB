@@ -14,13 +14,14 @@ namespace class_house
 	public class House
 	{
 		public List<Person> _family { get; private set;}
-		float _solar_panel_battery;
+		public string _familyName; // firstname
+		int _solar_panel_battery;
 		private RSACryptoServiceProvider key_pair;
-		public RSAParameters public_key {get; private set;}
-		public enum Season = {winter, autumn, spring, summer}; // summer <=> 4 kw, spring <=> 3 kw, autumn <=> 2 kw ,winter <=> 1 kw 
+		public RSAParameters public_key { get; private set; }
+		public enum Season {winter, autumn, spring, summer}; // summer <=> 4 kw, spring <=> 3 kw, autumn <=> 2 kw ,winter <=> 1 kw 
 		private Season _season;
 
-		public House(Season season)
+		public House(Season season, string name)
 		{
 			_season = season; 
 			_family = new List<Person>();
@@ -30,7 +31,7 @@ namespace class_house
 			public_key = key_pair.ExportParameters(false);
 			//Console.WriteLine(survey);
 		}
-		public ChangeSeason(Season season)
+		public void ChangeSeason(Season season)
 		{
 		 	_season = season;
 		}
@@ -39,16 +40,16 @@ namespace class_house
 		{
 			switch(_season)
 			{
-				case _season.winter:
+				case Season.winter:
 					_solar_panel_battery = 1000;
 					break;
-				case _season.autumn:
+				case Season.autumn:
 					_solar_panel_battery = 2000;
 					break;
-				case _season.spring:
+				case Season.spring:
 					_solar_panel_battery = 3000;
 					break;
-				case _season.summer:
+				case Season.summer:
 					_solar_panel_battery = 4000;
 					break;			
 			}
@@ -67,7 +68,7 @@ namespace class_house
 			return Convert.ToBase64String(signedData);
 		}
 
-		public bool verify(Person dest, int amount, string sign_hash)
+		public bool verify(House dest, int amount, string sign_hash)
 		{
 			byte[] data_to_be_verify = Encoding.ASCII.GetBytes(this.ToString() + dest.ToString() + amount.ToString());
 
@@ -76,7 +77,7 @@ namespace class_house
 
 		public override string ToString()
 		{
-			return name+Encoding.UTF8.GetString(public_key.Modulus);
+			return _familyName+Encoding.UTF8.GetString(public_key.Modulus);
 		}
 		
 		
