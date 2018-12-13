@@ -21,8 +21,6 @@ namespace class_house
 		public enum Season {winter, autumn, spring, summer}; // summer <=> 4 kw, spring <=> 3 kw, autumn <=> 2 kw ,winter <=> 1 kw 
 		private Season _season;
 
-		public House() {;}
-
 		public House(int season, string name)
 		{
 			_season = (Season)(season); 
@@ -79,7 +77,7 @@ namespace class_house
 
 		public override string ToString()
 		{
-			return _familyName+Encoding.UTF8.GetString(public_key.Modulus);
+			return _familyName;
 		}
 		
 		

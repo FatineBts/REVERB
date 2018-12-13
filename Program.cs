@@ -76,8 +76,8 @@ namespace MainProgram
    			Console.WriteLine($"blockchain");
   			Console.WriteLine(JsonConvert.SerializeObject(blockchain, Formatting.Indented)); //convert into Jason format 
 			Console.ReadKey();
-			House test = new House();
-			House des = new House();
+			House test = new House(0,"Y");
+			House des = new House(0,"Z");
 
 			Transaction flu = new Transaction(test,des,100);
 			if (flu.verify_signature())
@@ -120,8 +120,8 @@ namespace MainProgram
 		static void Main()
 		{		
 
-			//Blockchain(); //easier to launch some simulations
-			SmartGrid();
+			Blockchain(); //easier to launch some simulations
+			//SmartGrid();
 		}
 	}
 }

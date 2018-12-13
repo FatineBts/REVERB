@@ -82,7 +82,7 @@ namespace class_blockchain
     			AddBlock(block);  
   
     			PendingTransactions = new List<Transaction>();  
-    			CreateTransaction(new Transaction(new House(), minerAddress, Reward));  
+    			CreateTransaction(new Transaction(new House(0,"inconnu"), minerAddress, Reward));  
 			}
 
 			public bool IsValid()
