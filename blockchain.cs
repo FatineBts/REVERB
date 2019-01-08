@@ -105,7 +105,7 @@ namespace class_blockchain
             return true;
         	}
 
-        	public int GetBalance(House address) // get balance for one address 
+        	public int GetBalance(House address ,SmartGrid smartgrid) // get balance for one address 
         	{
             	int balance = 0;
 
@@ -115,12 +115,13 @@ namespace class_blockchain
                 	{
                     	var transaction = _chain[i].Transactions[j];
 
-                    	if (transaction.FromAddress == address)
+                    	if (transaction.FromAddress == address && balance>transaction.Amount)
                     	{
                         	balance -= transaction.Amount;
+                            smartgrid.update_energy(transaction.Amount); //we only do that once
                     	}
 
-                    	if (transaction.ToAddress == address)
+                    	if (transaction.ToAddress == address && balance>transaction.Amount)
                     	{
                         	balance += transaction.Amount;
                     	}
