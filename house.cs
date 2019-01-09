@@ -15,7 +15,7 @@ namespace class_house
 	{
 		public List<Person> _family { get; private set;}
 		public string _familyName; // firstname
-		int _solar_panel_battery;
+		public int _solar_panel_battery {get;set;}
 		private RSACryptoServiceProvider key_pair;
 		public RSAParameters public_key { get; private set; }
 		public enum Season {winter, autumn, spring, summer}; // summer <=> 4 kw, spring <=> 3 kw, autumn <=> 2 kw ,winter <=> 1 kw 

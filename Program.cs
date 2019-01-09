@@ -28,6 +28,7 @@ namespace MainProgram
 		{
 			// Creating a new chain
 			Blockchain blockchain = new Blockchain();
+			SmartGrid s = new SmartGrid(1); //winter
 
 			// // Creating transactions
 			// //Test 1 :
@@ -65,11 +66,11 @@ namespace MainProgram
              blockchain.ProcessPendingTransactions(YassineFamily);
 
 
-            Console.WriteLine($"Aurélien' balance: {blockchain.GetBalance(AurelFamily)}");
-            Console.WriteLine($"Fatine' balance: {blockchain.GetBalance(FatineFamily)}");
-            Console.WriteLine($"Alexia' balance: {blockchain.GetBalance(AlexiaFamily)}");
-   	        Console.WriteLine($"Geng' balance: {blockchain.GetBalance(GengFamily)}");
-            Console.WriteLine($"Yassine' balance: {blockchain.GetBalance(YassineFamily)}");
+            Console.WriteLine($"Aurélien' balance: {blockchain.GetBalance(AurelFamily,s)}");
+            Console.WriteLine($"Fatine' balance: {blockchain.GetBalance(FatineFamily,s)}");
+            Console.WriteLine($"Alexia' balance: {blockchain.GetBalance(AlexiaFamily,s)}");
+   	        Console.WriteLine($"Geng' balance: {blockchain.GetBalance(GengFamily,s)}");
+            Console.WriteLine($"Yassine' balance: {blockchain.GetBalance(YassineFamily,s)}");
 
           	Console.WriteLine("=========================");
    			Console.WriteLine("=========================");

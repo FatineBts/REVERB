@@ -17,6 +17,7 @@ using class_block;
 using class_transaction;
 using class_person;
 using class_house;
+using class_smartgrid;
 
 
 namespace class_blockchain

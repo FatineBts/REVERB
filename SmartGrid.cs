@@ -63,9 +63,9 @@ namespace class_smartgrid
             }
             Console.WriteLine("##### Before sort ##### \n");
 
-            for(int i = 0;i<_task.Count;i++)
+            for(int i = 0;i<_total_task.Count;i++)
             {   
-                Console.WriteLine("--"+i+"--\n"+_task[i].ToString());
+                Console.WriteLine("--"+i+"--\n"+_total_task[i].ToString());
             }
         }
 
@@ -74,12 +74,12 @@ namespace class_smartgrid
             _total_task.RemoveAll(item => DateTime.Compare(item.end_time,current_time) < 0);
             _total_task = _total_task.OrderByDescending(x => x.points).ThenBy(x => x.consumption).ToList(); //so sort the elements 
 
-            for(int i = 0; i < _task.Count; i++)
+            for(int i = 0; i < _total_task.Count; i++)
             {
-                var person = _list_maison.First(x => x._familyName == _total_task[i].creator); // on peut sélectionner à chaque fois la même famille (faire un bool dans la création de la tâche pour dire si on peut exécuter ou non?)
-                if(person.Person_energy < _task[i].consumption)
+                var house = _list_maison.First(x => x._familyName == _total_task[i].creator); // on peut sélectionner à chaque fois la même famille (faire un bool dans la création de la tâche pour dire si on peut exécuter ou non?)
+                if(house._solar_panel_battery < _total_task[i].consumption)
                 {
-                    if(Total_energy > _total_task[i].consumption)
+                    if(_total_energy > _total_task[i].consumption)
                     {
                         // Envoyer une requête aux autres
                     }
