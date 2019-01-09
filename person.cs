@@ -1,3 +1,12 @@
+/*
+##### REVERB Project ######## Polytech Sorbonne - 2018/2019 #########
+
+Supervised by : François PÊCHEUX 
+
+Realised by : Yassine ABBAR - Aurélien ABEL - Fatine BENTIRES ALJ - Geng REN - Alexia ZOUNIAS-SIRABELLA
+
+*/
+
 using System;
 using System.Security.Cryptography;
 using System.Text;
@@ -74,6 +83,7 @@ namespace class_person
 			double Heating_prob_15_18 = 0.5477031802;
 			double Heating_prob_18_21 = 0.7703180212;
 			double Heating_prob_21_0 = 0.6643109541;
+			
 			double Light_prob_0_6 = 0.09187279152;
 			double Light_prob_6_9 = 0.2897526502;
 			double Light_prob_9_12 = 0.4310954064;
