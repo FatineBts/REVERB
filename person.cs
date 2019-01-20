@@ -24,16 +24,18 @@ namespace class_person
 		public string name {get; private set;}
 		public string[] habit {get; private set;}
 		public List<Task> list_tache { get; private set;}
+		public string house_name = ""; 
 		private _figures _figure;
 
-
-		public Person(int figure,string name)
-		{
+		public Person(int figure, string name)
+		{	
 			_figure = (_figures)(figure);
-			 name = name; 
+			this.name = name; 
 
 			int random_line = new Random().Next(1, 284);
 			habit = survey[random_line].Split(",");
+
+			list_tache = new List<Task>();
 		}
 		
 		
@@ -114,8 +116,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[6]) != 0)
 					{
-						created_task.Add(new Task(1,current_time,Int32.Parse(habit[6]),name));
-						//Console.WriteLine(name+" turns on tv for "+habit[6]);
+						created_task.Add(new Task(1,current_time,Int32.Parse(habit[6]),house_name));
+						//Console.WriteLine(house_name+" turns on tv for "+habit[6]);
 					}
 				}
 
@@ -124,8 +126,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[13]) != 0)
 					{
-						created_task.Add(new Task(2,current_time,Int32.Parse(habit[13]),name));
-						//Console.WriteLine(name+" uses the pc for "+habit[13]);
+						created_task.Add(new Task(2,current_time,Int32.Parse(habit[13]),house_name));
+						//Console.WriteLine(house_name+" uses the pc for "+habit[13]);
 					}
 				}
 
@@ -134,8 +136,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[20]) != 0)
 					{
-						created_task.Add(new Task(3,current_time,Int32.Parse(habit[20]),name));
-						//Console.WriteLine(name+" turns on the oven for "+habit[20]);
+						created_task.Add(new Task(3,current_time,Int32.Parse(habit[20]),house_name));
+						//Console.WriteLine(house_name+" turns on the oven for "+habit[20]);
 					}
 				}
 
@@ -144,8 +146,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[27]) != 0)
 					{
-						created_task.Add(new Task(4,current_time,Int32.Parse(habit[27]),name));
-						//Console.WriteLine(name+" uses the kitchen for "+habit[27]);
+						created_task.Add(new Task(4,current_time,Int32.Parse(habit[27]),house_name));
+						//Console.WriteLine(house_name+" uses the kitchen for "+habit[27]);
 					}
 				}
 
@@ -157,8 +159,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[0]) != 0)
 					{
-						created_task.Add(new Task(1,current_time,Int32.Parse(habit[0]),name));
-						//Console.WriteLine(name+" turns on tv for "+habit[0]);
+						created_task.Add(new Task(1,current_time,Int32.Parse(habit[0]),house_name));
+						//Console.WriteLine(house_name+" turns on tv for "+habit[0]);
 					}
 				}
 
@@ -167,8 +169,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[7]) != 0)
 					{
-						created_task.Add(new Task(2,current_time,Int32.Parse(habit[7]),name));
-						//Console.WriteLine(name+" uses the pc for "+habit[7]);
+						created_task.Add(new Task(2,current_time,Int32.Parse(habit[7]),house_name));
+						//Console.WriteLine(house_name+" uses the pc for "+habit[7]);
 					}
 				}
 
@@ -177,8 +179,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[14]) != 0)
 					{
-						created_task.Add(new Task(3,current_time,Int32.Parse(habit[14]),name));
-						//Console.WriteLine(name+" turns on the oven for "+habit[14]);
+						created_task.Add(new Task(3,current_time,Int32.Parse(habit[14]),house_name));
+						//Console.WriteLine(house_name+" turns on the oven for "+habit[14]);
 					}
 				}				
 
@@ -187,8 +189,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[21]) != 0)
 					{
-						created_task.Add(new Task(4,current_time,Int32.Parse(habit[21]),name));
-						//Console.WriteLine(name+" uses the kitchen for "+habit[21]);
+						created_task.Add(new Task(4,current_time,Int32.Parse(habit[21]),house_name));
+						//Console.WriteLine(house_name+" uses the kitchen for "+habit[21]);
 					}
 				}
 			}
@@ -199,8 +201,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[1]) != 0)
 					{
-						created_task.Add(new Task(1,current_time,Int32.Parse(habit[1]),name));
-						//Console.WriteLine(name+" turns on tv for "+habit[1]);
+						created_task.Add(new Task(1,current_time,Int32.Parse(habit[1]),house_name));
+						//Console.WriteLine(house_name+" turns on tv for "+habit[1]);
 					}
 				}
 
@@ -209,8 +211,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[8]) != 0)
 					{
-						created_task.Add(new Task(2,current_time,Int32.Parse(habit[8]),name));
-						//Console.WriteLine(name+" uses the pc for "+habit[8]);
+						created_task.Add(new Task(2,current_time,Int32.Parse(habit[8]),house_name));
+						//Console.WriteLine(house_name+" uses the pc for "+habit[8]);
 					}
 				}
 
@@ -219,8 +221,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[15]) != 0)
 					{
-						created_task.Add(new Task(3,current_time,Int32.Parse(habit[15]),name));
-						//Console.WriteLine(name+" turns on the oven for "+habit[15]);
+						created_task.Add(new Task(3,current_time,Int32.Parse(habit[15]),house_name));
+						//Console.WriteLine(house_name+" turns on the oven for "+habit[15]);
 					}
 				}	
 
@@ -229,8 +231,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[22]) != 0)
 					{
-						created_task.Add(new Task(4,current_time,Int32.Parse(habit[22]),name));
-						//Console.WriteLine(name+" uses the kitchen for "+habit[22]);
+						created_task.Add(new Task(4,current_time,Int32.Parse(habit[22]),house_name));
+						//Console.WriteLine(house_name+" uses the kitchen for "+habit[22]);
 					}
 				}							
 			}
@@ -241,8 +243,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[2]) != 0)
 					{
-						created_task.Add(new Task(1,current_time,Int32.Parse(habit[2]),name));
-						//Console.WriteLine(name+" turns on tv for "+habit[2]);
+						created_task.Add(new Task(1,current_time,Int32.Parse(habit[2]),house_name));
+						//Console.WriteLine(house_name+" turns on tv for "+habit[2]);
 					}
 				}
 
@@ -251,8 +253,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[9]) != 0)
 					{
-						created_task.Add(new Task(2,current_time,Int32.Parse(habit[9]),name));
-						//Console.WriteLine(name+" uses the pc for "+habit[9]);
+						created_task.Add(new Task(2,current_time,Int32.Parse(habit[9]),house_name));
+						//Console.WriteLine(house_name+" uses the pc for "+habit[9]);
 					}
 				}
 
@@ -261,8 +263,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[16]) != 0)
 					{
-						created_task.Add(new Task(3,current_time,Int32.Parse(habit[16]),name));
-						//Console.WriteLine(name+" turns on the oven for "+habit[16]);
+						created_task.Add(new Task(3,current_time,Int32.Parse(habit[16]),house_name));
+						//Console.WriteLine(house_name+" turns on the oven for "+habit[16]);
 					}
 				}
 
@@ -271,8 +273,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[23]) != 0)
 					{
-						created_task.Add(new Task(4,current_time,Int32.Parse(habit[23]),name));
-						//Console.WriteLine(name+" uses the kitchen for "+habit[23]);
+						created_task.Add(new Task(4,current_time,Int32.Parse(habit[23]),house_name));
+						//Console.WriteLine(house_name+" uses the kitchen for "+habit[23]);
 					}
 				}	
 			}
@@ -283,8 +285,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[3]) != 0)
 					{
-						created_task.Add(new Task(1,current_time,Int32.Parse(habit[3]),name));
-						//Console.WriteLine(name+" turns on tv for "+habit[3]);
+						created_task.Add(new Task(1,current_time,Int32.Parse(habit[3]),house_name));
+						//Console.WriteLine(house_name+" turns on tv for "+habit[3]);
 					}
 				}
 
@@ -293,8 +295,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[10]) != 0)
 					{
-						created_task.Add(new Task(2,current_time,Int32.Parse(habit[10]),name));
-						//Console.WriteLine(name+" uses the pc for "+habit[10]);
+						created_task.Add(new Task(2,current_time,Int32.Parse(habit[10]),house_name));
+						//Console.WriteLine(house_name+" uses the pc for "+habit[10]);
 					}
 				}
 
@@ -303,8 +305,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[17]) != 0)
 					{
-						created_task.Add(new Task(3,current_time,Int32.Parse(habit[17]),name));
-						//Console.WriteLine(name+" turns on the oven for "+habit[17]);
+						created_task.Add(new Task(3,current_time,Int32.Parse(habit[17]),house_name));
+						//Console.WriteLine(house_name+" turns on the oven for "+habit[17]);
 					}
 				}
 
@@ -313,8 +315,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[24]) != 0)
 					{
-						created_task.Add(new Task(4,current_time,Int32.Parse(habit[24]),name));
-						//Console.WriteLine(name+" uses the kitchen for "+habit[24]);
+						created_task.Add(new Task(4,current_time,Int32.Parse(habit[24]),house_name));
+						//Console.WriteLine(house_name+" uses the kitchen for "+habit[24]);
 					}
 				}					
 			}
@@ -325,8 +327,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[4]) != 0)
 					{
-						created_task.Add(new Task(1,current_time,Int32.Parse(habit[4]),name));
-						//Console.WriteLine(name+" turns on tv for "+habit[4]);
+						created_task.Add(new Task(1,current_time,Int32.Parse(habit[4]),house_name));
+						//Console.WriteLine(house_name+" turns on tv for "+habit[4]);
 					}
 				}
 
@@ -335,8 +337,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[11]) != 0)
 					{
-						created_task.Add(new Task(2,current_time,Int32.Parse(habit[11]),name));
-						//Console.WriteLine(name+" uses the pc for "+habit[11]);
+						created_task.Add(new Task(2,current_time,Int32.Parse(habit[11]),house_name));
+						//Console.WriteLine(house_name+" uses the pc for "+habit[11]);
 					}
 				}
 
@@ -345,8 +347,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[18]) != 0)
 					{
-						created_task.Add(new Task(3,current_time,Int32.Parse(habit[18]),name));
-						//Console.WriteLine(name+" turns on the oven for "+habit[18]);
+						created_task.Add(new Task(3,current_time,Int32.Parse(habit[18]),house_name));
+						//Console.WriteLine(house_name+" turns on the oven for "+habit[18]);
 					}
 				}
 
@@ -355,8 +357,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[25]) != 0)
 					{
-						created_task.Add(new Task(4,current_time,Int32.Parse(habit[25]),name));
-						//Console.WriteLine(name+" uses the kitchen for "+habit[25]);
+						created_task.Add(new Task(4,current_time,Int32.Parse(habit[25]),house_name));
+						//Console.WriteLine(house_name+" uses the kitchen for "+habit[25]);
 					}
 				}	
 			}
@@ -367,8 +369,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[5]) != 0)
 					{
-						created_task.Add(new Task(1,current_time,Int32.Parse(habit[5]),name));
-						//Console.WriteLine(name+" turns on tv for "+habit[5]);
+						created_task.Add(new Task(1,current_time,Int32.Parse(habit[5]),house_name));
+						//Console.WriteLine(house_name+" turns on tv for "+habit[5]);
 					}
 				}
 
@@ -377,8 +379,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[12]) != 0)
 					{
-						created_task.Add(new Task(2,current_time,Int32.Parse(habit[12]),name));
-						//Console.WriteLine(name+" uses the pc for "+habit[12]);
+						created_task.Add(new Task(2,current_time,Int32.Parse(habit[12]),house_name));
+						//Console.WriteLine(house_name+" uses the pc for "+habit[12]);
 					}
 				}
 
@@ -387,8 +389,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[19]) != 0)
 					{
-						created_task.Add(new Task(3,current_time,Int32.Parse(habit[19]),name));
-						//Console.WriteLine(name+" turns on the oven for "+habit[19]);
+						created_task.Add(new Task(3,current_time,Int32.Parse(habit[19]),house_name));
+						//Console.WriteLine(house_name+" turns on the oven for "+habit[19]);
 					}
 				}
 
@@ -397,8 +399,8 @@ namespace class_person
 				{	
 					if(Int32.Parse(habit[26]) != 0)
 					{
-						created_task.Add(new Task(4,current_time,Int32.Parse(habit[26]),name));
-						//Console.WriteLine(name+" uses the kitchen for "+habit[26]);
+						created_task.Add(new Task(4,current_time,Int32.Parse(habit[26]),house_name));
+						//Console.WriteLine(house_name+" uses the kitchen for "+habit[26]);
 					}
 				}	
 			}

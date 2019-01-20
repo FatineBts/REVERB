@@ -24,7 +24,7 @@ namespace class_house
 	{
 		public List<Person> _family { get; private set;}
 		public string _familyName; // firstname
-		public int _solar_panel_battery {get;set;}
+		public float _solar_panel_battery {get;set;}
 		private RSACryptoServiceProvider key_pair;
 		public RSAParameters public_key { get; private set; }
 		public enum Season {winter, autumn, spring, summer}; // summer <=> 4 kw, spring <=> 3 kw, autumn <=> 2 kw ,winter <=> 1 kw 
@@ -34,12 +34,15 @@ namespace class_house
 		{
 			_season = (Season)(season); 
 			_family = new List<Person>();
+			_familyName = name;
+			_solar_panel_battery = 1000; // tout le monde commence avec 1000kw
 			// Create a key pair
 			key_pair = new RSACryptoServiceProvider();
 			// Save public key information
 			public_key = key_pair.ExportParameters(false);
 			//Console.WriteLine(survey);
 		}
+
 		public void ChangeSeason(Season season)
 		{
 		 	_season = season;
@@ -50,16 +53,16 @@ namespace class_house
 			switch(_season)
 			{
 				case Season.winter:
-					_solar_panel_battery = 1000;
+					_solar_panel_battery = 100;
 					break;
 				case Season.autumn:
-					_solar_panel_battery = 2000;
+					_solar_panel_battery = 200;
 					break;
 				case Season.spring:
-					_solar_panel_battery = 3000;
+					_solar_panel_battery = 300;
 					break;
 				case Season.summer:
-					_solar_panel_battery = 4000;
+					_solar_panel_battery = 400;
 					break;			
 			}
 
@@ -67,17 +70,18 @@ namespace class_house
 
 		public void AddFamilyMember(Person NewPerson)
 		{
+			NewPerson.house_name = this._familyName;
 			_family.Add(NewPerson);
 		}
 
-		public string sign(House dest, int amount)
+		public string sign(House dest, float amount)
 		{
 			byte[] originalData = Encoding.ASCII.GetBytes(this.ToString() + dest.ToString() + amount.ToString());
 			byte[] signedData = key_pair.SignData(originalData, new SHA256CryptoServiceProvider());
 			return Convert.ToBase64String(signedData);
 		}
 
-		public bool verify(House dest, int amount, string sign_hash)
+		public bool verify(House dest, float amount, string sign_hash)
 		{
 			byte[] data_to_be_verify = Encoding.ASCII.GetBytes(this.ToString() + dest.ToString() + amount.ToString());
 

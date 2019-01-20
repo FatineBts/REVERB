@@ -60,7 +60,6 @@ namespace class_blockchain
 	    	}
 
 			public void AddBlock(Block NewBlock)
-
 	    	{
 	    		Block latestBlock = GetLatestBlock();  
         		NewBlock.Index = latestBlock.Index + 1;  
@@ -80,9 +79,11 @@ namespace class_blockchain
 			{  
     			Block block = new Block(DateTime.Now, GetLatestBlock().Hash, PendingTransactions);  
     			AddBlock(block);  
-  
+                
+                House inconnu = new House(0, "inconnu");
+
     			PendingTransactions = new List<Transaction>();  
-    			CreateTransaction(new Transaction(new House(0,"inconnu"), minerAddress, Reward));  
+    			CreateTransaction(new Transaction(ref inconnu, ref minerAddress, Reward));  
 			}
 
 			public bool IsValid()
@@ -105,9 +106,9 @@ namespace class_blockchain
             return true;
         	}
 
-        	public int GetBalance(House address ,SmartGrid smartgrid) // get balance for one address 
+        	public float GetBalance(House address ,SmartGrid smartgrid) // get balance for one address 
         	{
-            	int balance = 0;
+            	float balance = 0;
 
             	for (int i = 0; i < _chain.Count; i++)
             	{

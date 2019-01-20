@@ -1,0 +1,11 @@
+/home/geng/REVERB/obj/Debug/netcoreapp2.2/REVERB.csprojAssemblyReference.cache
+/home/geng/REVERB/obj/Debug/netcoreapp2.2/REVERB.csproj.CoreCompileInputs.cache
+/home/geng/REVERB/obj/Debug/netcoreapp2.2/REVERB.AssemblyInfoInputs.cache
+/home/geng/REVERB/obj/Debug/netcoreapp2.2/REVERB.AssemblyInfo.cs
+/home/geng/REVERB/bin/Debug/netcoreapp2.2/REVERB.deps.json
+/home/geng/REVERB/bin/Debug/netcoreapp2.2/REVERB.runtimeconfig.json
+/home/geng/REVERB/bin/Debug/netcoreapp2.2/REVERB.runtimeconfig.dev.json
+/home/geng/REVERB/bin/Debug/netcoreapp2.2/REVERB.dll
+/home/geng/REVERB/bin/Debug/netcoreapp2.2/REVERB.pdb
+/home/geng/REVERB/obj/Debug/netcoreapp2.2/REVERB.dll
+/home/geng/REVERB/obj/Debug/netcoreapp2.2/REVERB.pdb

@@ -50,7 +50,7 @@ namespace MainProgram
 			House AlexiaFamily = new House(0,"ZOUNIAS-SIRABELLA");
 			AlexiaFamily.AddFamilyMember(Alexia);
 
-			Transaction transaction = new Transaction(AurelFamily, FatineFamily, 20); 
+			Transaction transaction = new Transaction(ref AurelFamily, ref FatineFamily, 20); 
 
 			blockchain.CreateTransaction(transaction); 
 
@@ -60,8 +60,8 @@ namespace MainProgram
 			// // Creating transactions
 			// //Test 2 :
 
-			blockchain.CreateTransaction(new Transaction(FatineFamily, GengFamily, 5));
-            blockchain.CreateTransaction(new Transaction(FatineFamily, AlexiaFamily, 5));
+			blockchain.CreateTransaction(new Transaction(ref FatineFamily, ref GengFamily, 5));
+            blockchain.CreateTransaction(new Transaction(ref FatineFamily, ref AlexiaFamily, 5));
              blockchain.ProcessPendingTransactions(YassineFamily);
 
 
@@ -79,7 +79,7 @@ namespace MainProgram
 			House test = new House(0,"Y");
 			House des = new House(0,"Z");
 
-			Transaction flu = new Transaction(test,des,100);
+			Transaction flu = new Transaction(ref test,ref des,100);
 			if (flu.verify_signature())
 			{
 				Console.WriteLine("Bonne signature");
@@ -97,21 +97,22 @@ namespace MainProgram
 
 			// global variable of time
 			DateTime current_time = DateTime.Now;
-			//DateTime current_time = new DateTime(2018, 11, 21, 19, 20,30); // (YYYY, MM, DD, HH,mm,ss)
-			SmartGrid s = new SmartGrid(0); // winter 
-			// Person lambda = new Person(); //in this class we load the data once for all 
+			// DateTime current_time = new DateTime(2018, 11, 21, 19, 20,30); // (YYYY, MM, DD, HH,mm,ss)
 			
-			Person Joey = new Person(1,"Joey");
-			Joey.Chosen_Task(Joey, 2,current_time,15);  
-			double p = Joey.probability(26);
-			Console.WriteLine("probability : " + p); 
+			SmartGrid s = new SmartGrid(0); // winter 
+			// // Person lambda = new Person(); //in this class we load the data once for all 
+			
+			// Person Joey = new Person(1,"Joey");
+			// Joey.Chosen_Task(Joey, 2,current_time,15);  
+			// double p = Joey.probability(26);
+			// Console.WriteLine("probability : " + p); 
 	
 			while(true) //each min we check the list of tasks
 			{
 				Console.WriteLine("\n"+current_time.ToString()); 
 				s.update(current_time);
 				// we suppose that 1 s is equivalent to 1 min in the process
-				current_time = current_time.AddMinutes(30.0); //each 30 min just for the test 
+				current_time = current_time.AddMinutes(60.0); //each 60 min just for the test 
 				System.Threading.Thread.Sleep(1000);
 			}
 					
@@ -121,7 +122,7 @@ namespace MainProgram
 		static void Main()
 		{		
 
-			Blockchain(); //easier to launch some simulations
+			// Blockchain(); //easier to launch some simulations
 			SmartGrid();
 		}
 	}

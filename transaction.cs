@@ -21,16 +21,18 @@ namespace class_transaction
 	{  
     	public House FromAddress { get;  private set; }  
     	public House ToAddress { get;  private set; }  
-    	public int Amount { get; private set; }
+    	public float Amount { get; private set; }
         public string sign_hash {get; private set;}
 
   
-    	public Transaction(House src, House dest, int amount)  
+    	public Transaction(ref House src, ref House dest, float amount)  
     	{  
             FromAddress = src;
             ToAddress = dest;  
         	Amount = amount;
             sign_hash = sign_transaction();
+            src._solar_panel_battery -= amount;
+            dest._solar_panel_battery += amount;
     	}  
 
         public string sign_transaction()
