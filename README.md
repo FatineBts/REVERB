@@ -19,7 +19,8 @@ Files:
 - transactions.cs: modelize transferts between different users. 
 - generation_pubkey.sh: to create the public and private keys.
 - keys.cs: to save public keys in a dictionnary. 
-- person.cs : to represent a person and more. 
+- person.cs : to represent a person and more.
+- house.cs : to represent a hole family. 
 - Task.cs : to generate tasks. 
 - SmarGrid.cs : to represent the smartgrid process.
 - REVERB.csproj, bin folder and obj folder: to use dotnet. 
@@ -50,6 +51,7 @@ Fichiers :
 - generation_pubkey.sh : pour créer les clés publiques et privés.
 - keys.cs : pour stocker les clés publiques dans un dictionnaire. 
 - person.cs : pour représenter une personne et plus. 
+- house.cs : pour représenter une famille.
 - Task.cs : pour générer des tâches à effectuer. 
 - SmarGrid.cs : pour représenter le travail effectué par une smartgrid. 
 - REVERB.csproj, bin folder and obj folder : pour utiliser dotnet.  
