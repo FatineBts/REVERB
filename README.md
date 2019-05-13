@@ -14,20 +14,20 @@ Different steps are required: the creation of the Smart Grid and the Blockchain 
 
 Files:
 
-- blocks.cs: containt the different elements of a block such as the hash key. 
-- blockchain.cs: create a set of blocks et update the informations (previous hash...).
-- transactions.cs: modelize transferts between different users. 
+- blocks.cs: containts different elements of a block such as the hash key. 
+- blockchain.cs: creates a set of blocks et update the informations (previous hash...).
+- transactions.cs: modelizes transferts between different users. 
 - generation_pubkey.sh: to create the public and private keys.
 - keys.cs: to save public keys in a dictionnary. 
-- person.cs : to represent a person and more.
-- house.cs : to represent a hole family. 
-- Task.cs : to generate tasks. 
-- SmarGrid.cs : to represent the smartgrid process.
+- person.cs : represents a person and more.
+- house.cs : represents a family. 
+- Task.cs : generates tasks. 
+- SmarGrid.cs : represents the smartgrid process.
 - REVERB.csproj, bin folder and obj folder: to use dotnet. 
 
 Folders: 
 
-- Data : to contains data bases.
+- Data : contains data bases.
 
 Remark : To add a new library, please use dotnet. 
 Example : 
